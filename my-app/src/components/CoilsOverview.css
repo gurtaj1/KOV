@@ -1,0 +1,26 @@
+.CoilsOverviewBlock {
+    
+    margin: 10px 0;
+}
+
+.CoilsOverviewText {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.CoilsOverviewImg {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+}
+
+.CoilsOverviewImg img {
+    width: 100%;
+}
+
+.thumbPalette {
+ 
+}

@@ -1,0 +1,45 @@
+.title {
+    text-align: center;
+    color: blue;
+}
+
+.productPageImage {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.productBreakdown {
+    display: block;
+    float: right;
+}
+
+.colorDropdown {
+    display: block;
+    float: left
+}
+
+#productPagePrice {
+    display: inline-block;
+    float: left;
+    color: red;
+}
+
+#addToBasket {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 480px) {
+	    .row {
+		position: relative;
+		}
+		 .add {
+			position: absolute;
+            bottom: 0;
+            right: 0;
+		} 
+}

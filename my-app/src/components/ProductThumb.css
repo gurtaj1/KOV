@@ -1,0 +1,19 @@
+.productThumb {
+    display: inline-block;
+    text-align: center;
+}
+
+.productThumbImage {
+    display: inline-block;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+p {
+    display: block;
+}
+
+#thumbPrice {
+    color: red;
+    display: block;
+}

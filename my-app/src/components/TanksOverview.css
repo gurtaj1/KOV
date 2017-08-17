@@ -1,0 +1,26 @@
+.tanksOverviewBlock {
+    
+    margin: 10px 0;
+}
+
+.tanksOverviewText {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.tanksOverviewImg {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+}
+
+.tanksOverviewImg img {
+    width: 100%;
+}
+
+.thumbPalette {
+    
+}

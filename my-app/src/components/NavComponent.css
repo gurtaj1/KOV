@@ -1,0 +1,87 @@
+nav {
+	background-color: #00F;
+	overflow: hidden;
+	padding: 1em;
+	border-bottom: 1px solid #000;
+}
+
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F0F;
+	text-decoration: none;
+}
+
+.navWide {
+	display: none;
+	margin: 0 auto;
+}
+
+.wideDiv{
+	text-align: center;
+}
+
+.wideDiv a {
+	padding: 0 0.5em;
+	display: inline;
+}
+
+.wideDiv form {
+	padding: 0 0.5em;
+	display: inline;
+}
+
+.wideDiv form .wideSearchBox {
+	width: 100px;
+}
+
+.navNarrow i {
+	color: #FFF;
+	float: left;
+	cursor: pointer;
+}
+
+.navNarrow i:hover {
+	color: #F0F;
+}
+
+.narrowLinks {
+	display: none;
+}
+
+.narrowLinks a {
+	display: block;
+	float: left;
+	clear: left;
+	padding: 0.5em 0;
+}
+
+.narrowLinks form {
+	padding: 0.5em 0;
+	display: block;
+	float: left;
+	clear: left;
+}
+
+.narrowLinks form .narrowSearchBox {
+	width: 100px;
+}
+
+
+
+@media only screen and (min-width: 480px) {
+	    .navWide {
+		display: block;
+		}
+		.navNarrow {
+			display: none;
+		}
+}

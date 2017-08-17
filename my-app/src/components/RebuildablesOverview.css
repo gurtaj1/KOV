@@ -1,0 +1,26 @@
+.rebuildablesOverviewBlock {
+    
+    margin: 10px 0;
+}
+
+.rebuildablesOverviewText {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.rebuildablesOverviewImg {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+}
+
+.rebuildablesOverviewImg img {
+    width: 100%;
+}
+
+.thumbPalette {
+    
+}

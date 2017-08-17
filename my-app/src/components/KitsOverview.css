@@ -1,0 +1,26 @@
+.kitsOverviewBlock {
+    
+    margin: 10px 0;
+}
+
+.kitsOverviewText {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.kitsOverviewImg {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+}
+
+.kitsOverviewImg img {
+    width: 100%;
+}
+
+.thumbPalette {
+
+}
