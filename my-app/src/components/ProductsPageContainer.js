@@ -10,7 +10,7 @@ import Filter from './Filter';
 import ProductsListItem from './ProductsListItem';
 import FilterCSS from './Filter.css';
 
-class KitsPage extends React.Component{
+class ProductsPage extends React.Component{
     createCategoryOverview() {
         return this.props.overview.map(overview => {
             return (
@@ -138,4 +138,4 @@ function matchDispatchToProps(dispatch){
     return bindActionCreators({changeBrandFilter: changeBrandFilter, changePriceFilter: changePriceFilter}, dispatch);
 };
 
-export const KitsPageContainer = connect(mapStateToProps, matchDispatchToProps)(KitsPage);
+export const ProductsPageContainer = connect(mapStateToProps, matchDispatchToProps)(ProductsPage);

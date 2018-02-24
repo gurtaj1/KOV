@@ -64,6 +64,45 @@ const initialState = [
         imageAlt2: "Don't Forget your Tank",
         link2: "products/tanks"
     },
+    {
+        type: "accessories",
+        title: "vape accessories",
+        text: "Accessories come in all shapes and sizes",
+        imageSource: "",
+        imageAlt: "",
+        imageSource1: "",
+        imageAlt1: "",
+        link1: "",
+        imageSource2: "",
+        imageAlt2: "",
+        link2: ""
+    },
+    {
+        type: "mods",
+        title: "vape mods",
+        text: "Vape Mods hold all the power and all control! Whether you prefer to control your puffs based on temperature, voltage, or wattage, or if you like to go even further into it and assess just how many puffs you are getting out of a full tank of your favourite juice, you can rest assured that the King of Vape has a Mod for you!",
+        imageSource: "",
+        imageAlt: "",
+        imageSource1: "",
+        imageAlt1: "",
+        link1: "",
+        imageSource2: "",
+        imageAlt2: "",
+        link2: ""
+    },
+    {
+        type: "rebuildables",
+        title: "vape rebuildables",
+        text: "Rebuildables come in two types. The Drippers (RDA's) and the Tanks (RTA's). These are not the same tanks that the King has in the Tanks section. These Rebuildable Tanks and Rebuildable Drippers do not limit you to premade coils. With these Rebuildables you can pick just exactly how many coils, what type of coil, and what type of wick, you would like to use inorder to produce that juicy falvoursome vapour that we all love so much!",
+        imageSource: "",
+        imageAlt: "",
+        imageSource1: "",
+        imageAlt1: "",
+        link1: "",
+        imageSource2: "",
+        imageAlt2: "",
+        link2: ""
+    }
 ]
 
 export default function(state=initialState, action){

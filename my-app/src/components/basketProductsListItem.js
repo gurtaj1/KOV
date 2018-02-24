@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import ProductThumbCSS from './ProductThumb.css';
+import ProductListItemCSS from './ProductListItem.css';
 
 class BasketProductsListItem  extends React.Component{
     render () {
