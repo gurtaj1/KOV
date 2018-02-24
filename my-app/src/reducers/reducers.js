@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import products from './products';
-import kitsBrandFilters from './kitsBrandFilters';
-import kitsPriceRangeFilters from './kitsPriceRangeFilters';
+import brandFilters from './brandFilters';
+import priceRangeFilters from './priceRangeFilters';
 import overviews from './overviews';
 import basketProducts from './basketProducts';
 import {alert} from './alert.reducer';
@@ -13,8 +13,8 @@ import {users} from './users.reducer';
 
 const reducers = combineReducers({
     products: products,
-    kitsBrandFilters: kitsBrandFilters,
-    kitsPriceRangeFilters: kitsPriceRangeFilters,
+    brandFilters: brandFilters,
+    priceRangeFilters: priceRangeFilters,
     basketProducts: basketProducts,
     overviews: overviews,
 

@@ -1,8 +1,19 @@
 import lodash from 'lodash';
 
-const initialState = [ {priceRange: '£0-£20', inuse: false, disabled: false},
-                       {priceRange: '£20-£40', inuse: false, disabled: false},
-                       {priceRange: '£40-£60', inuse: false, disabled: false}];    
+const initialState = [ {type: 'kits', priceRange: '£0-£20', inuse: false, disabled: false},
+                       {type: 'kits', priceRange: '£20-£40', inuse: false, disabled: false},
+                       {type: 'kits', priceRange: '£40-£60', inuse: false, disabled: false},
+                       {type: 'tanks', priceRange: '£10-£20', inuse: false, disabled: false},
+                       {type: 'tanks', priceRange: '£20-£30', inuse: false, disabled: false},
+                       {type: 'coils', priceRange: '£0-£5', inuse: false, disabled: false},
+                       {type: 'coils', priceRange: '£5-£10', inuse: false, disabled: false},
+                       {type: 'coils', priceRange: '£10-£15', inuse: false, disabled: false},
+                       {type: 'eliquids', priceRange: '£0-£5', inuse: false, disabled: false},
+                       {type: 'eliquids', priceRange: '£5-£10', inuse: false, disabled: false},
+                       {type: 'eliquids', priceRange: '£10-£15', inuse: false, disabled: false},
+                       {type: 'batteries', priceRange: '£0-£5', inuse: false, disabled: false},
+                       {type: 'batteries', priceRange: '£5-£10', inuse: false, disabled: false}
+                    ];    
                             
 function changeFilter(stateFilters, filter) {
     let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState)

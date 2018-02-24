@@ -99,8 +99,16 @@ class ProductsPage extends React.Component{
 };
 
 function mapStateToProps(state , ownProps) {
-    let brandFilters = state.kitsBrandFilters;
-    let priceRangeFilters = state.kitsPriceRangeFilters;
+    let brandFilters = state.brandFilters;
+    let filtered_brandFilters = brandFilters;
+    filtered_brandFilters = filtered_brandFilters.filter(
+        filter => filter.type === ownProps.match.params.type
+    )
+    let priceRangeFilters = state.priceRangeFilters;
+    let filtered_priceRangeFilters = priceRangeFilters;
+    filtered_priceRangeFilters = filtered_priceRangeFilters.filter(
+        filter => filter.type === ownProps.match.params.type
+    )
     let products = state.products;
     let overviews = state.overviews;
     let overview = overviews.filter(
@@ -128,8 +136,8 @@ function mapStateToProps(state , ownProps) {
     });
     return {
         overview: overview,
-        brandFilters: brandFilters,
-        priceRangeFilters: priceRangeFilters,
+        brandFilters: filtered_brandFilters,
+        priceRangeFilters: filtered_priceRangeFilters,
         products: filtered_products
     };
 };
