@@ -9,7 +9,7 @@ import ProductPage from './ProductPage';
 
 class KitProductPage extends React.Component {
     createProductPageComponent() {
-        let activeProduct = this.props.products.filter(product => product.id === this.props.match.params.productid)
+        let activeProduct = this.props.products.filter(product => product.id === this.props.match.params.productid) //productid being the end part of the url
         return activeProduct.map(product =>{
             return (
                 <ProductPage
@@ -43,7 +43,7 @@ class KitProductPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    let products = state.kitsProducts;
+    let products = state.products;
     let temp_products = products;
     return {
     products: temp_products

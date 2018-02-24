@@ -11,16 +11,17 @@ var NavComponent = React.createClass({
 			<div className="navWide">
 				<div className="wideDiv">
 					<Link to='/' className="homePage">Home</Link>
-					<Link to='/kits' className="kitsPage">Kits</Link>
-					<Link to="/tanks" className="tanksPage">Tanks</Link>
-					<Link to="/coils" className="coilsPage">Coils</Link>
-					<Link to="/eliquids" className="eLiquidsPage">E-Liquids</Link>
-					<Link to="/batteries" className="batteriesPage">Batteries</Link>
+					<Link to='/products/kits' className="kitsPage">Kits</Link>
+					<Link to="/products/tanks" className="tanksPage">Tanks</Link>
+					<Link to="/products/coils" className="coilsPage">Coils</Link>
+					<Link to="/products/eliquids" className="eLiquidsPage">E-Liquids</Link>
+					<Link to="/products/batteries" className="batteriesPage">Batteries</Link>
 					<form action="./results.php" method="get">
 						<input className="wideSearchBox" type="text" name="input" placeholder="Search Products" />
 						<input type="submit" value="Search" />
 					</form>
 					<Link to="/basket" className="basketPage">Basket</Link>
+					<Link to="" className="loginPage">Login</Link>
 				</div>
 			</div>
 			<div className="navNarrow">

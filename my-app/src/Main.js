@@ -11,7 +11,7 @@ import BatteriesPage from './components/BatteriesPage';
 import {KitsPageContainer} from './components/KitsPageContainer';
 import {BasketContainer} from './components/BasketContainer';
 
-import {KitProductPageContainer} from './components/KitProductPageContainer';
+import {ProductPageContainer} from './components/ProductPageContainer';
 
 class Main extends React.Component {
     render() {
@@ -19,8 +19,8 @@ class Main extends React.Component {
             <main>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route path="/kits" component={KitsPageContainer} />
-                    <Route exact path="/kitproducts/:productid" component={KitProductPageContainer} />} />
+                    <Route path="/products/:type" component={KitsPageContainer} />
+                    <Route path="/:type/:productid" component={ProductPageContainer} />} />
                     <Route path="/tanks" component={TanksPage} />
                     <Route path="/coils" component={CoilsPage} />
                     <Route path="/eliquids" component={ELiquidsPage} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import KitsOverviewCSS from './KitsOverview.css';
-import ProductThumb from './ProductThumb';
 
 var KitsOverview = React.createClass({
     render: function() {

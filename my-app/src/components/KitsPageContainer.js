@@ -5,12 +5,24 @@ import {bindActionCreators} from 'redux';
 import changeBrandFilter from '../actions/changeBrandFilter';
 import changePriceFilter from '../actions/changePriceFilter';
 
-import KitsOverview from './KitsOverview';
+import CategoryOverview from './CategoryOverview';
 import Filter from './Filter';
 import ProductsListItem from './ProductsListItem';
 import FilterCSS from './Filter.css';
 
 class KitsPage extends React.Component{
+    createCategoryOverview() {
+        return this.props.overview.map(overview => {
+            return (
+                <CategoryOverview 
+                    title={overview.title}
+                    text={overview.text}
+                    image={overview.imageSource}
+                    alt={overview.imageAlt}
+                />
+            )
+        })
+    }
     createBrandFilterList() {
         return this.props.brandFilters.map(filter => {
             return (
@@ -47,7 +59,7 @@ class KitsPage extends React.Component{
                         model={product.model}
                         price={product.price}
                         image={product.image}
-                        link={"/kitproducts/"+product.id}
+                        link={"/"+this.props.match.params.type+"/"+product.id}
                     />
                 )
             })} else {
@@ -59,7 +71,7 @@ class KitsPage extends React.Component{
             <div>
               <div className="container">
                 <div className="row">
-                    <KitsOverview />
+                    {this.createCategoryOverview()}
                 </div>
                 <div className="row">
                     <div className="filtersList col-md-6 col-xs-12">
@@ -86,11 +98,18 @@ class KitsPage extends React.Component{
     }
 };
 
-function mapStateToProps(state) {
+function mapStateToProps(state , ownProps) {
     let brandFilters = state.kitsBrandFilters;
     let priceRangeFilters = state.kitsPriceRangeFilters;
-    let products = state.kitsProducts;
+    let products = state.products;
+    let overviews = state.overviews;
+    let overview = overviews.filter(
+        overview => overview.type === ownProps.match.params.type
+    )
     let filtered_products = products;
+    filtered_products = filtered_products.filter(
+        product => product.type === ownProps.match.params.type //gets type from the the route params and finds products which have type that matches
+    )
     let activeBrandFilters = brandFilters.filter(
         item => item.inuse === true
     );
@@ -108,9 +127,10 @@ function mapStateToProps(state) {
         );
     });
     return {
-    brandFilters: brandFilters,
-    priceRangeFilters: priceRangeFilters,
-    products: filtered_products
+        overview: overview,
+        brandFilters: brandFilters,
+        priceRangeFilters: priceRangeFilters,
+        products: filtered_products
     };
 };
 

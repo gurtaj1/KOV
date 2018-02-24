@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ProductPageCSS from './ProductPage.css';
 
-class ProductPage extends React.Component {
+class ProductPageTop extends React.Component {
     render() {
         return (
             <div>
@@ -35,4 +35,4 @@ class ProductPage extends React.Component {
         )}
 }
 
-export default ProductPage;
+export default ProductPageTop;
