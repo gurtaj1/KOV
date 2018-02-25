@@ -1,5 +1,4 @@
 .categoryOverviewBlock {
-    
     margin: 10px 0;
 }
 
@@ -7,20 +6,15 @@
     color: blue;
     display: inline-block;
     text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
 }
 
 .categoryOverviewImg {
-    color: blue;
     display: inline-block;
-    text-align: center;
 }
 
 .categoryOverviewImg img {
-    width: 100%;
-}
-
-.thumbPalette {
-
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
 }

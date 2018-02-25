@@ -49,7 +49,7 @@ class ProductsPage extends React.Component{
             )
         })
     }
-    createKitsProductsList() {
+    createProductsList() {
         if(this.props.products.length > 0) {
             return this.props.products.map(product =>{
                 return (
@@ -70,17 +70,15 @@ class ProductsPage extends React.Component{
         return (
             <div>
               <div className="container">
+                {this.createCategoryOverview()}
                 <div className="row">
-                    {this.createCategoryOverview()}
-                </div>
-                <div className="row">
-                    <div className="filtersList col-md-6 col-xs-12">
+                    <div className="filtersList col-md-6 col-12">
                         Filter by Brand:
                         <div>
                             {this.createBrandFilterList()}
                         </div>
                     </div>
-                    <div className="filtersList col-md-6 col-xs-12">
+                    <div className="filtersList col-md-6 col-12">
                         Filter by Price Range:
                         <div>
                             {this.createPriceRangeFilterList()}
@@ -88,9 +86,7 @@ class ProductsPage extends React.Component{
                     </div>
                 </div>
                 <div className="row">
-                    <div>
-                        {this.createKitsProductsList()}
-                    </div>
+                    {this.createProductsList()}
                 </div>
               </div>
             </div>

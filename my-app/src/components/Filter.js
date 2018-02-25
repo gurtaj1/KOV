@@ -4,9 +4,8 @@ import FilterCSS from './Filter.css';
 var Filter = React.createClass({
     render: function() {
         return(
-            <div className="col-md-4 col-xs-4">
+            <div className="filterDiv col-md-4 col-6">
                 <input type="checkbox"
-                    className="filter"
                     disabled={this.props.disabled}
                     id={this.props.id}
                     defaultChecked={this.props.inuse}
