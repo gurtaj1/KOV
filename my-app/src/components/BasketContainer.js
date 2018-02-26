@@ -6,6 +6,8 @@ import addToBasket from '../actions/addToBasket';
 import removeFromBasket from '../actions/removeFromBasket';
 
 import BasketProductsListItem from './basketProductsListItem';
+import BasketCheckout from './BasketCheckout';
+import BasketProductListItemCSS from './BasketProductListItem.css';
 
 class Basket  extends React.Component {
     createBasketProductsList () {
@@ -24,16 +26,37 @@ class Basket  extends React.Component {
                         removeProduct={() => this.props.removeFromBasket(product)}
                     />
                 )
-            })} else {
-                return <div>No products have been added.</div>
-            }
+        })} else {
+            return <div id="emptyBasket">Basket is empty.</div>
+        }
+    }
+    createCheckout () {
+        var total = this.props.products.reduce(function(acc, product){
+            var subTotal = product.qty*product.price;
+            acc += subTotal;
+            return acc;
+        },0);
+        if(total === 0){
+            return "";
+        } else {
+            return (
+                <BasketCheckout
+                    total={total}
+                />
+            ) 
+        }
     }
     render () {
         return (
-            <div>
-                <h3>Your Basket</h3>
-                <div>
+            <div className="container">
+                <div className="row">
+                    <h2 id="basketHeader">Your Basket</h2>
+                </div>
+                <div class="row">
                     {this.createBasketProductsList()}
+                </div>
+                <div>
+                    {this.createCheckout()}
                 </div>
             </div>
         )

@@ -26,7 +26,7 @@ class ProductPageTop extends React.Component {
                     </div>
                     <div className="add col-md-8">
                         <h2 id="productPagePrice">{this.props.price}</h2>
-                        <button type="button" className="btn btn-success" id="addToBasket" onClick={() => this.props.addProduct()}>
+                        <button type="button" className="btn btn-danger" id="addToBasket" onClick={() => this.props.addProduct()}>
                             Add to Basket
                         </button>
                     </div>

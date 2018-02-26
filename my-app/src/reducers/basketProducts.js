@@ -21,7 +21,7 @@ function removeProduct(stateProducts, product) {
     for (var i=0; i<newProducts.length; i++) {
         if (newProducts[i].id === product.id) {
             if (newProducts[i].qty === 1) {
-                newProducts = lodash.filter(newProducts, stateProduct => stateProduct.id !== newProducts[i].id)
+                newProducts = newProducts.filter(newProduct => newProduct.id !== newProducts[i].id)
             } else {
                 newProducts[i].qty--
             }

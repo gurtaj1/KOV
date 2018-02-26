@@ -11,7 +11,7 @@ class Home extends React.Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div id="myCarousel" className="carousel slide col-8 mx-auto" data-ride="carousel">
+                    <div id="myCarousel" className="carousel slide col-10 mx-auto" data-ride="carousel">
                         <ol className="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>

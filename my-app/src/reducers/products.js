@@ -44,7 +44,6 @@ import LightningLemonImage from '../product_images/flavours/mrcloud/lightninglem
 import LycheeTwisterImage from '../product_images/flavours/mrcloud/lycheetwister.jpg';
 import MonsoonMangoImage from '../product_images/flavours/mrcloud/monsoonmango.jpg';
 import OrangeDrizzleImage from '../product_images/flavours/mrcloud/orangedrizzle.jpg';
-import BubblegumImage from '../product_images/flavours/omg/bubblegum.jpg';
 import BlackcurrantAndLiquoriceImage from '../product_images/flavours/picknmix/blackcurrantandliquorice.png';
 import BlackJacksImage from '../product_images/flavours/picknmix/blackjacks.png';
 import CherryLipsImage from '../product_images/flavours/picknmix/cherrylips.png';
@@ -287,19 +286,6 @@ const initialState = [
             priceRange: '£40-£60',
             text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
             link1: '/tarot%20nano',
-            link2: '',
-            qty: 1
-        },
-        {
-            id: 'K18',
-            type: 'kits',
-            brand: 'vpark',
-            model: 'tc150',
-            image: Tc150KitImage,
-            price: 50,
-            priceRange: '£40-£60',
-            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/tc150',
             link2: '',
             qty: 1
         },
@@ -618,31 +604,18 @@ const initialState = [
         {
             id: 'EL11',
             type: 'eliquids',
-            brand: 'omg',
-            model: 'bubble gum',
-            image: BubblegumImage,
-            price: 8,
-            priceRange: '£0-£5',
+            brand: "pick 'n' mix",
+            model: 'vanilla fudge',
+            image: VanillaFudgeImage,
+            price: 4,
+            priceRange: '£5-£10',
             text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/bubble%20gum',
+            link1: '/vanilla%20fudge',
             link2: '',
             qty: 1
         },
         {
             id: 'EL12',
-            type: 'eliquids',
-            brand: "pick 'n' mix",
-            model: 'blackcurrant and liquorice',
-            image: BlackcurrantAndLiquoriceImage,
-            price: 8,
-            priceRange: '£5-£10',
-            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/blackcurrant%20and%20liquorice',
-            link2: '',
-            qty: 1
-        },
-        {
-            id: 'EL13',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'black jacks',
@@ -655,7 +628,7 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'EL14',
+            id: 'EL13',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'cherry lips',
@@ -668,7 +641,7 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'EL15',
+            id: 'EL14',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'foam bananas',
@@ -681,7 +654,7 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'EL16',
+            id: 'EL15',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'sour cherries',
@@ -694,7 +667,7 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'EL17',
+            id: 'EL16',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'strawberry belts',
@@ -707,7 +680,7 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'EL18',
+            id: 'EL17',
             type: 'eliquids',
             brand: "pick 'n' mix",
             model: 'strawberry milkshake',
@@ -720,15 +693,28 @@ const initialState = [
             qty: 1
         },
         {
+            id: 'EL18',
+            type: 'eliquids',
+            brand: 'vado',
+            model: 'strawberry',
+            image: StrawberryImage,
+            price: 4,
+            priceRange: '£0-£5',
+            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
+            link1: '/strawberry',
+            link2: '',
+            qty: 1
+        },
+        {
             id: 'EL19',
             type: 'eliquids',
-            brand: "pick 'n' mix",
-            model: 'vanilla fudge',
-            image: VanillaFudgeImage,
-            price: 4,
+            brand: 'vado',
+            model: 'watermelon',
+            image: WatermelonImage,
+            price: 8,
             priceRange: '£5-£10',
             text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/vanilla%20fudge',
+            link1: '/watermelon',
             link2: '',
             qty: 1
         },
@@ -846,32 +832,6 @@ const initialState = [
             priceRange: '£0-£5',
             text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
             link1: '/spearmint1',
-            link2: '',
-            qty: 1
-        },
-        {
-            id: 'EL29',
-            type: 'eliquids',
-            brand: 'vado',
-            model: 'strawberry',
-            image: StrawberryImage,
-            price: 4,
-            priceRange: '£0-£5',
-            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/strawberry',
-            link2: '',
-            qty: 1
-        },
-        {
-            id: 'EL30',
-            type: 'eliquids',
-            brand: 'vado',
-            model: 'watermelon',
-            image: WatermelonImage,
-            price: 8,
-            priceRange: '£5-£10',
-            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/watermelon',
             link2: '',
             qty: 1
         },
