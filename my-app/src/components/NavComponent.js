@@ -21,7 +21,6 @@ var NavComponent = React.createClass({
 							<input type="submit" value="Search" />
 						</form>
 						<Link to="/basket" className="basketPage">Basket</Link>
-						<Link to="" className="loginPage">Login</Link>
 					</div>
 				</div>
 				<div className="navNarrow">

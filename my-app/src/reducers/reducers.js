@@ -5,10 +5,6 @@ import brandFilters from './brandFilters';
 import priceRangeFilters from './priceRangeFilters';
 import overviews from './overviews';
 import basketProducts from './basketProducts';
-import {alert} from './alert.reducer';
-import {authentication} from './authentication.reducer';
-import {registration} from './registration.reducer';
-import {users} from './users.reducer';
 
 
 const reducers = combineReducers({
@@ -17,11 +13,6 @@ const reducers = combineReducers({
     priceRangeFilters: priceRangeFilters,
     basketProducts: basketProducts,
     overviews: overviews,
-
-    alert: alert,
-    authentication: authentication,
-    registration: registration,
-    users: users,
 
     router: routerReducer
 });
