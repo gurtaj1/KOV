@@ -14,7 +14,6 @@ const initialState = [  {type: 'kits', brand: 'eleaf', inuse: false, disabled: f
                         {type: 'coils', brand: 'kangertech', inuse: false, disabled: false},
                         {type: 'coils', brand: 'smok', inuse: false, disabled: false},
                         {type: 'coils', brand: 'vaporesso', inuse: false, disabled: false},
-                        {type: 'eliquids', brand: 'grumpy monkey', inuse: false, disabled: false},
                         {type: 'eliquids', brand: 'monsta vape', inuse: false, disabled: false},
                         {type: 'eliquids', brand: 'mr cloud', inuse: false, disabled: false},
                         {type: 'eliquids', brand: "pick 'n' mix", inuse: false, disabled: false},

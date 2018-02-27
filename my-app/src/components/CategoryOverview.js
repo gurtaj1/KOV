@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CategoryOverviewCSS from './CategoryOverview.css';
 
 var CategoryOverview = React.createClass({
     render: function() {

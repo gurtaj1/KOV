@@ -8,7 +8,7 @@ import changePriceFilter from '../actions/changePriceFilter';
 import CategoryOverview from './CategoryOverview';
 import Filter from './Filter';
 import ProductsListItem from './ProductsListItem';
-import FilterCSS from './Filter.css';
+import ProductsPageContainerCSS from './ProductsPageContainer.css';
 
 class ProductsPage extends React.Component{
     createCategoryOverview() {
@@ -49,6 +49,21 @@ class ProductsPage extends React.Component{
             )
         })
     }
+	filterDivExtenionToggle () {
+            var filterDivExtension = document.querySelector('.filterDivExtension');
+            var chevronUp = document.querySelector('#chevronUp');
+            var chevronDown = document.querySelector('#chevronDown');
+            var icon;
+			if (filterDivExtension.style.display === 'block') {
+                filterDivExtension.style.display = 'none';
+                chevronUp.style.display = 'none';
+                chevronDown.style.display = 'block';
+			} else {
+                filterDivExtension.style.display = 'block';
+                chevronUp.style.display = 'block';
+                chevronDown.style.display = 'none';
+			}
+    }
     createProductsList() {
         if(this.props.products.length > 0) {
             return this.props.products.map(product =>{
@@ -71,21 +86,31 @@ class ProductsPage extends React.Component{
             <div>
               <div className="container">
                 {this.createCategoryOverview()}
-                <div className="row">
-                    <div className="filtersList col-md-6 col-12">
-                        Filter by Brand:
-                        <div>
-                            {this.createBrandFilterList()}
+                <div ClassName="row">
+                    <div className= "filterDiv col-12">
+                        <div className="iconCrossbar">
+                            <i id="chevronDown" className="fa fa-chevron-down" onClick={this.filterDivExtenionToggle}></i>
+                            <i id="chevronUp" className="fa fa-chevron-up" onClick={this.filterDivExtenionToggle}></i>
                         </div>
-                    </div>
-                    <div className="filtersList col-md-6 col-12">
-                        Filter by Price Range:
-                        <div>
-                            {this.createPriceRangeFilterList()}
+                        <div className="filterDivExtension">
+                            <div className="row">
+                                <div className="filtersList col-md-6 col-12">
+                                    Filter by Brand:
+                                    <div>
+                                        {this.createBrandFilterList()}
+                                    </div>
+                                </div>
+                                <div className="filtersList col-md-6 col-12">
+                                    Filter by Price Range:
+                                    <div>
+                                        {this.createPriceRangeFilterList()}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row productsList">
                     {this.createProductsList()}
                 </div>
               </div>

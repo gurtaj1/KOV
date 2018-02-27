@@ -10,10 +10,10 @@ class ProductPageTop extends React.Component {
                     <h1>{this.props.productName}</h1>
                 </div>
                 <div className="row">
-                    <div className="col-md-4 col-xs-12">
+                    <div className="col-md-4 col-12">
                         <img className="productPageImage" src={this.props.productImage} />
                     </div>
-                    <div className="col-md-8 col-xs-12 productBreakdown">
+                    <div className="col-md-8 col-12 productBreakdown">
                         <div className="productDescription">
                             <p>
                                 {this.props.text}

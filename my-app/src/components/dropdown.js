@@ -1,6 +1,6 @@
 import React from 'react';
 
-var Filter = React.createClass({
+var Dropdown = React.createClass({
     render: function() {
         return(
             <div className="filter col-md-4 col-6">
@@ -17,4 +17,4 @@ var Filter = React.createClass({
     }
 });
 
-export default Filter;
+export default Dropdown;

@@ -2,9 +2,16 @@ import React from 'react';
 
 import HomeCSS from './Home.css';
 
-import image1 from '../other_images/1.jpg';
-import image2 from '../other_images/2.jpg';
-import image3 from '../other_images/3.jpg';
+import KitsBannerSmoke from '../product_images/kits/kitsbannersmoke.jpg';
+import KitsBannerSmokePattern from '../product_images/kits/kitsbannersmokepattern.jpg';
+import KitsBannerPattern from '../product_images/kits/kitsbannerpattern.jpg';
+import TanksBannerSmoke from '../product_images/tanks/tanksbannersmoke.jpg';
+import TanksBannerSmokePattern from '../product_images/tanks/tanksbannersmokepattern.jpg';
+import TanksBannerPattern from '../product_images/tanks/tanksbannerpattern.jpg';
+import ELiquidsBannerSmoke from '../product_images/flavours/eliquidsbannersmoke.jpg';
+import ELiquidsBannerSmokePattern from '../product_images/flavours/eliquidsbannersmokepattern.jpg';
+import ELiquidsBannerPattern from '../product_images/flavours/eliquidsbannerpattern.jpg';
+import HomeBannerSmoke from '../product_images/home/homebannersmoke.jpg';
 
 class Home extends React.Component {
     render() {
@@ -16,17 +23,21 @@ class Home extends React.Component {
                             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
                         </ol>
 
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img className="d-block w-100" src={image1} alt="pic1" />
+                                <img className="d-block w-100" src={HomeBannerSmoke} alt="pic1" />
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src={image2} alt="pic2" />
+                                <img className="d-block w-100" src={TanksBannerPattern} alt="pic2" />
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src={image3} alt="pic3" />
+                                <img className="d-block w-100" src={ELiquidsBannerSmoke} alt="pic3" />
+                            </div>
+                            <div className="carousel-item">
+                                <img className="d-block w-100" src={KitsBannerPattern} alt="pic4" />
                             </div>
                         </div>
 

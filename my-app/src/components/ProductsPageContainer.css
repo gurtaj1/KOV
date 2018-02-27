@@ -1,0 +1,70 @@
+.categoryOverviewBlock {
+    margin: 10px 0;
+}
+
+.categoryOverviewText {
+    color: #3CA500;
+    display: inline-block;
+    text-align: center;
+    margin: 0px auto auto auto;
+}
+
+.categoryOverviewText h1 {
+    color: black;
+}
+
+.categoryOverviewImg {
+    display: inline-block;
+}
+
+.categoryOverviewImg img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+.filterDiv {
+    background-color: #3CA500;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.68), inset 0px 0px 1px 1px #89847e;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.iconCrossbar {
+    border-radius: 5px;
+    background-color: #348D00;
+}
+
+#chevronDown {
+    display: block;
+    color: white;
+}
+
+#chevronUp {
+    display: none;
+    color: white;
+}
+
+.filterDivExtension{
+    margin-top: 10px;
+    display: none;
+}
+
+.filtersList {
+    text-align: left;
+    font-weight: bold;
+}
+
+.filtersList label {
+    font-weight: initial;
+}
+
+.filter{
+    display: inline-block;
+    position: relative;
+    color: white;
+}
