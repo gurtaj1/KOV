@@ -21,7 +21,7 @@ var NavComponent = React.createClass({
 						<Link to="/products/batteries" className="batteriesPage">Batteries</Link>
 						<form action="./results.php" method="get" className="form-inline">
 							<input className="form-control mr-sm-2" type="search" name="input" placeholder="Search Products" aria-label="Search" />
-							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+							<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 						</form>
 						<Link to="/basket" className="basketPage">Basket</Link>
 					</div>

@@ -5,7 +5,7 @@ var Filter = React.createClass({
         return(
             <div className="filter col-md-4 col-6">
                 <input type="radio"
-                    checked={this.props.inuse}
+                    defaultChecked={this.props.inuse}
                     name={this.props.name}
                     onClick={() => this.props.changeFilterResetPageNumber()}
                     />

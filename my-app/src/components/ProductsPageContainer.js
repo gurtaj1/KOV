@@ -1,5 +1,4 @@
 import React from 'react';
-import Pagination from './Pagination';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
@@ -10,12 +9,16 @@ import CategoryOverview from './CategoryOverview';
 import Filter from './Filter';
 import ProductsListItem from './ProductsListItem';
 import ProductsPageContainerCSS from './ProductsPageContainer.css';
+import Pagination from './Pagination';
 
 class ProductsPage extends React.Component{
     createCategoryOverview() {
+        let i = 1;
         return this.props.overview.map(overview => {
+            i++
             return (
                 <CategoryOverview 
+                    key={"catOverview"+i} //each child in an array or iterator should have a unique "key" prop
                     title={overview.title}
                     text={overview.text}
                     image={overview.imageSource}
@@ -25,9 +28,12 @@ class ProductsPage extends React.Component{
         })
     }
     createBrandFilterList() {
+        let i = 1;
         return this.props.brandFilters.map(filter => {
+            i++
             return (
                 <Filter
+                    key={filter.brand+i+"brand"}
                     name={this.props.match.params.type + "brandFilter"} //so that each seperate group of radio buttons (filters) refer only to each other. (the name is shared between each group)
                     id={filter.brand}
                     changeFilterResetPageNumber={() => {this.props.changeBrandFilter(filter); this.handlePageChange(1)}} //without page reset would often get no products displayed on filter application due to the activePage state remaining at the page that was active at the time of filter application
@@ -37,9 +43,12 @@ class ProductsPage extends React.Component{
         })
     }
     createPriceRangeFilterList() {
+        let i = 1;
         return this.props.priceRangeFilters.map(filter => {
+            i++
             return (
                 <Filter
+                    key={filter.priceRange+i+"priceRange"}
                     name={this.props.match.params.type + "priceFilter"} 
                     id={filter.priceRange}
                     changeFilterResetPageNumber={() => {this.props.changePriceFilter(filter); this.handlePageChange(1)}}
@@ -66,7 +75,7 @@ class ProductsPage extends React.Component{
     createProductsList() {
         if(this.props.products.length > 0) {
             return this.props.products.map(product =>{
-                if (this.props.products.indexOf(product) >= (this.state.activePage*12) - 13 && this.props.products.indexOf(product) < (this.state.activePage*12)) {
+                if (this.props.products.indexOf(product) >= (this.state.activePage*12) - 12 && this.props.products.indexOf(product) < (this.state.activePage*12)) { //render the 12 (number of products per page) products that correspond to the current (active) page
                     return (
                         <ProductsListItem
                             key={product.id}
@@ -92,12 +101,35 @@ class ProductsPage extends React.Component{
     }
     createPagination() {
         if (this.props.products.length > 12) {
-            return (
-                <Pagination 
-                    onclick1={() => this.handlePageChange(1)}
-                    onclick2={() => this.handlePageChange(2)}
-                />
-            )
+            if (this.props.products.length > this.state.activePage * 12 && this.state.activePage > 1) { //if there are products following AND preceding the current page
+                return (
+                    <Pagination 
+                        onclick1={() => this.handlePageChange(1)}
+                        onclick2={() => this.handlePageChange(2)}
+                        disabled1={false}
+                        disabled2={false}
+                    />
+                )
+            } else if (this.props.products.length > this.state.activePage * 12) { //if there are only products following the current page
+                return (
+                    <Pagination 
+                        onclick1={() => this.handlePageChange(1)}
+                        onclick2={() => this.handlePageChange(2)}
+                        disabled1={true}
+                        disabled2={false}
+                    />
+                ) 
+            } else if (this.state.activePage > 1) { //if there are only products preceding the current page
+                return (
+                    <Pagination 
+                        onclick1={() => this.handlePageChange(1)}
+                        onclick2={() => this.handlePageChange(2)}
+                        disabled1={false}
+                        disabled2={true}
+                    />
+                ) 
+            }
+
         }
     }
     render () {
@@ -105,7 +137,7 @@ class ProductsPage extends React.Component{
             <div>
                 <div className="container">
                     {this.createCategoryOverview()}
-                    <div ClassName="row">
+                    <div className="row">
                         <div className= "filterDiv col-12">
                             <div className="iconCrossbar">
                                 <i id="chevronDown" className="fa fa-chevron-down" onClick={this.filterDivExtenionToggle}></i>

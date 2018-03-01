@@ -5,8 +5,8 @@ class Paginaton extends React.Component {
         return (
             <div className="row">
                 <div className="pagination">
-                    <button id="prevPage" className="btn" onClick={() => this.props.onclick1()}>prev</button>
-                    <button id="nextPage" className="btn" onClick={() => this.props.onclick2()}>next</button>
+                    <button id="prevPage" className="btn" disabled={this.props.disabled1} onClick={() => this.props.onclick1()}>prev</button>
+                    <button id="nextPage" className="btn" disabled={this.props.disabled2} onClick={() => this.props.onclick2()}>next</button>
                 </div>
             </div>
         )
