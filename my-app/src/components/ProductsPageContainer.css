@@ -1,3 +1,7 @@
+.container {
+    font-family: 'Righteous', cursive;
+}
+
 .categoryOverviewBlock {
     margin: 10px 0;
 }
@@ -21,13 +25,14 @@
     margin: auto;
     max-height: 100%;
     max-width: 100%;
+    border-radius: 5px;
 }
 
 
 .filterDiv {
     background-color: #3CA500;
     border-radius: 5px;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.68), inset 0px 0px 1px 1px #89847e;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
     margin-top: 10px;
     margin-bottom: 20px;
     text-align: center;
@@ -36,7 +41,8 @@
 
 .iconCrossbar {
     border-radius: 5px;
-    background-color: #348D00;
+    background-color: #009900;
+    cursor: pointer;
 }
 
 #chevronDown {
@@ -67,4 +73,13 @@
     display: inline-block;
     position: relative;
     color: white;
+}
+
+.filter input {
+    cursor: pointer;
+}
+
+.pagination {
+    display: inline-block;
+    margin: auto;
 }

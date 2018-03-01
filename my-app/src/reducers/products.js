@@ -277,19 +277,6 @@ const initialState = [
             qty: 1
         },
         {
-            id: 'K17',
-            type: 'kits',
-            brand: 'vaporesso',
-            model: 'tarot nano',
-            image: TarotNanoKitImage,
-            price: 50,
-            priceRange: '£40-£60',
-            text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
-            link1: '/tarot%20nano',
-            link2: '',
-            qty: 1
-        },
-        {
             id: 'T1',
             type: 'tanks',
             brand: 'smok',
@@ -608,7 +595,7 @@ const initialState = [
             model: 'vanilla fudge',
             image: VanillaFudgeImage,
             price: 4,
-            priceRange: '£5-£10',
+            priceRange: '£0-£5',
             text: "The Eleaf iStick combines easy to use operation, long battery life and innovative features to create a streamlined e-cigarette starter kit. The iStick Basic is perfect for new and experienced vapers alike.",
             link1: '/vanilla%20fudge',
             link2: '',

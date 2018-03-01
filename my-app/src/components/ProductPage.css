@@ -1,9 +1,9 @@
 .title {
     text-align: center;
-    color: blue;
+    color: black;
 }
 
-.productPageImage {
+.productPageImage img {
     display: block;
     float: left;
     height: 100%;
@@ -13,6 +13,14 @@
 .productBreakdown {
     display: block;
     float: right;
+    background-color: rgba(103, 243, 22, 0.0);
+    border: 1px solid green;
+    border-radius: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+}
+
+.productDescription {
+    margin-top: 10px;
 }
 
 .colorDropdown {
@@ -21,30 +29,29 @@
 }
 
 #productPagePrice {
-    display: inline-block;
     float: left;
     color: red;
 }
 
 #addToBasket {
-    display: inline-block;
     float: right;
-    margin-top: 15px;
-    margin-bottom: 0px;
+    margin-top: -2px;
 }
 
 .otherProductReminder img {
+    border-radius: 5px;
     max-width: 100%;
     max-height: 100%;
+    margin: 35px 0px;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
 	    .row {
 		position: relative;
 		}
 		 .add {
 			position: absolute;
             bottom: 0;
-            right: 0;
-		} 
+
+;		} 
 }

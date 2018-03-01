@@ -2,7 +2,8 @@ nav {
 	background-color: #3CA500;
 	overflow: hidden;
 	padding: 1em;
-	border-bottom: 1px solid #000;
+	box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+	font-family: 'Righteous', cursive;
 }
 
 a {
@@ -16,7 +17,7 @@ a:visited {
 }
 
 a:hover {
-	color: #F0F;
+	color: black;
 	text-decoration: none;
 }
 
@@ -27,6 +28,11 @@ a:hover {
 
 .wideDiv{
 	text-align: center;
+}
+
+.wideDiv img {
+	max-height: 50px;
+	margin-top: -10px;
 }
 
 .wideDiv a {
@@ -62,6 +68,10 @@ a:hover {
 	float: left;
 	clear: left;
 	padding: 0.5em 0;
+}
+
+.narrowLinks img {
+	max-height: 30px;
 }
 
 .narrowLinks form {

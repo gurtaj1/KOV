@@ -32,6 +32,9 @@ class ProductPage extends React.Component {
                     link2={overview.link2}
                     image2={overview.imageSource2}
                     alt2={overview.imageAlt2}
+                    link3={overview.link3}
+                    image3={overview.imageSource3}
+                    alt3={overview.imageAlt3}
                 />
             )
         })

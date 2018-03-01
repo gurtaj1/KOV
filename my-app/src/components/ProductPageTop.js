@@ -6,29 +6,33 @@ class ProductPageTop extends React.Component {
     render() {
         return (
             <div>
-                <div className="row title">
-                    <h1>{this.props.productName}</h1>
+                <div className="row">
+                    <div className="title mx-auto">
+                        <h1>{this.props.productName}</h1>
+                    </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-4 col-12">
-                        <img className="productPageImage" src={this.props.productImage} />
-                    </div>
-                    <div className="col-md-8 col-12 productBreakdown">
-                        <div className="productDescription">
-                            <p>
-                                {this.props.text}
-                            </p>
-                            <select className="btn btn-info dropdown-toggle colorDropdown">
-                                <option value="black">Black</option>
-                                <option value="silver">Silver</option>
-                            </select>
+                    <div className="col-md-3 col-12 mx-auto">
+                        <div className="productPageImage">
+                            <img src={this.props.productImage} />
                         </div>
                     </div>
-                    <div className="add col-md-8">
-                        <h2 id="productPagePrice">{this.props.price}</h2>
-                        <button type="button" className="btn btn-danger" id="addToBasket" onClick={() => this.props.addProduct()}>
-                            Add to Basket
-                        </button>
+                    <div className="col-md-8 col-11 mx-auto productBreakdown">
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="productDescription">
+                                    <p>
+                                        {this.props.text}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="add col-12">
+                            <h2 id="productPagePrice">{this.props.price}</h2>
+                            <button type="button" className="btn btn-primary" id="addToBasket" onClick={() => this.props.addProduct()}>
+                                Add to Basket
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
