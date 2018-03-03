@@ -1,13 +1,27 @@
 import {Link} from 'react-router-dom';
 import React from 'react';
+import {connect} from 'react-redux';
+import {push} from 'react-router-redux';
+import {bindActionCreators} from 'redux';
 
 import './NavComponent.css';
 
 import Logo from '../product_images/logo.png';
 
 
-var NavComponent = React.createClass({
-	render: function() {
+class NavComponent extends React.Component{
+	getData() {
+		var formData = new FormData(document.getElementById("searchBar"));
+        var inputValue = document.getElementById("searchBox").value;
+        document.getElementById("searchBox").value = "";
+        this.props.push("/searchresults/"+inputValue); //push new url to history (navigates page to new url)
+    }
+    searchEnter(e) { //e represents the 'event'
+        if (e.keycode == 13 || e.which == 13) {
+            return this.getData();
+        }
+    }
+	render() {
 		return (
 			<div>
 			<nav>
@@ -19,10 +33,8 @@ var NavComponent = React.createClass({
 						<Link to="/products/coils" className="coilsPage">Coils</Link>
 						<Link to="/products/eliquids" className="eLiquidsPage">E-Liquids</Link>
 						<Link to="/products/batteries" className="batteriesPage">Batteries</Link>
-						<form action="./results.php" method="get" className="form-inline">
-							<input className="form-control mr-sm-2" type="search" name="input" placeholder="Search Products" aria-label="Search" />
-							<button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-						</form>
+                        <input className="form-control mr-sm-2" id="searchBox" onKeyDown={(key) => this.searchEnter(key)} type="search" name="input" placeholder="Search Products" aria-label="Search"/> {/*'key' in the onKeyDown function represents the key press event (could have used any word)*/}
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={() => this.getData()}>Search</button>
 						<Link to="/basket" className="basketPage">Basket</Link>
 					</div>
 				</div>
@@ -46,8 +58,8 @@ var NavComponent = React.createClass({
 			</nav>
 			</div>
 		);
-	},
-	linksToggle: function() {
+	}
+	linksToggle() {
 			var linksEl = document.querySelector('.narrowLinks');
 			if (linksEl.style.display === 'block') {
 				linksEl.style.display = 'none';
@@ -55,6 +67,10 @@ var NavComponent = React.createClass({
 				linksEl.style.display = 'block';
 			}
 	}
-});
+}
 
-export default NavComponent;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({push: push}, dispatch); //push is the action creator that allows us to programmitcally change the history in the store (state)
+}
+
+export const NavComponentContainer = connect(null, mapDispatchToProps)(NavComponent); //null placed in usual position of mapStateToProps argument as this is a needed declaration by the connect function, if mapStateToProps is not going to be used (see react-redux documentation). The NavComponent does not need access to the store and this is the reason for not using mapStateToProps

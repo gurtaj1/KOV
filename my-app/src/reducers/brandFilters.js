@@ -28,7 +28,7 @@ const initialState = [  {type: 'kits', brand: 'ALL', inuse: true},
                     ];      
                             
 function changeFilter(stateFilters, filter) {
-    let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState)
+    let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState) not tht slice does not change the array that calls it (non-mutating)
     let correctFilter = lodash.find(newFilters, newFilter => newFilter.brand === filter.brand && newFilter.type === filter.type); //finds filter which satisfies the function-invoked within the newFilters array : find(collection to inspect, the function invoked per iteration). note that we change the filter that matches brand AND (product) type so that we do not change the values of the filters which are displayed on other, product type, routes.
     correctFilter.inuse = true; //changes it to opposite boolean of what it currently is
     for (var i=0; i<newFilters.length; i++) {

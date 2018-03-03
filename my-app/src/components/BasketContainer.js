@@ -70,8 +70,8 @@ function mapStateToProps(state) {
     };
 };
 
-function matchDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch){
     return bindActionCreators({addToBasket: addToBasket, removeFromBasket: removeFromBasket}, dispatch);
 };
 
-export const BasketContainer = connect(mapStateToProps, matchDispatchToProps)(Basket);
+export const BasketContainer = connect(mapStateToProps, mapDispatchToProps)(Basket);

@@ -26,6 +26,7 @@ class ProductPage extends React.Component {
         return this.props.activeOverview.map(overview =>{
             return (
                 <ProductPageBottom 
+                    key={this.props.match.params.productid+"reminders"}
                     link1={overview.link1}
                     image1={overview.imageSource1}
                     alt1={overview.imageAlt1}
@@ -66,8 +67,8 @@ function mapStateToProps(state, ownProps) {
     };
 };
 
-function matchDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch){
     return bindActionCreators({addToBasket: addToBasket}, dispatch);
 };
 
-export const ProductPageContainer = connect(mapStateToProps, matchDispatchToProps)(ProductPage);
+export const ProductPageContainer = connect(mapStateToProps, mapDispatchToProps)(ProductPage);

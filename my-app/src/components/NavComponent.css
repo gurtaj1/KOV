@@ -45,8 +45,9 @@ a:hover {
 	display: inline;
 }
 
-.wideDiv form .wideSearchBox {
-	width: 100px;
+.wideDiv #searchBox {
+	display: inline;
+	width: 155px;
 }
 
 .navNarrow i {

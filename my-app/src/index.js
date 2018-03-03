@@ -5,24 +5,26 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import {ConnectedRouter, routerMiddleware} from 'react-router-redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import createHistory from 'history/createBrowserHistory';
-import {BrowserRouter} from 'react-router-dom';
-import App from './App';
-import reducers from './reducers/reducers';
 
+import {composeWithDevTools} from 'redux-devtools-extension';
+
+import App from './App';
 import './index.css';
 
+import thunk from 'redux-thunk';
+import createHistory from 'history/createBrowserHistory';
+
+import reducers from './reducers/reducers';
+
 const history = createHistory();
-const routeHistoryMiddleware = routerMiddleware(history);
+const routeHistoryMiddleware = routerMiddleware(history); //this will allow us to programmatically (manualy) chang the url, from anywhere in the app
 
-export const store = createStore(reducers, composeWithDevTools(applyMiddleware(routeHistoryMiddleware, thunk)));
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(routeHistoryMiddleware, thunk)));
 
-ReactDOM.render(<BrowserRouter history={history}>
-    <Provider store={store}>
-        <App/>
-    </Provider>
-</BrowserRouter>,
+ReactDOM.render(<Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <App/>
+                    </ConnectedRouter >
+                </Provider>,
 document.getElementById('root')
 );

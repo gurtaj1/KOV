@@ -1,14 +1,13 @@
 import React from 'react';
 
-import NavComponent from './components/NavComponent';
+import {NavComponentContainer} from './components/NavComponentContainer';
 import Main from './Main';
-import Footer from './components/Footer';
+
 
 const App = () => (
     <div>
-      <NavComponent />
+      <NavComponentContainer />
       <Main />
-      <Footer />
     </div>
 );
 

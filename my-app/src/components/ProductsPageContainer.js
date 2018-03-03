@@ -34,7 +34,7 @@ class ProductsPage extends React.Component{
             return (
                 <Filter
                     key={filter.brand+i+"brand"}
-                    name={this.props.match.params.type + "brandFilter"} //so that each seperate group of radio buttons (filters) refer only to each other. (the name is shared between each group)
+                    name={this.props.match.params.type + "brandFilter"} //so that each seperate group of radio buttons (filters) refer only to each other. (the name is shared within each group)
                     id={filter.brand}
                     changeFilterResetPageNumber={() => {this.props.changeBrandFilter(filter); this.handlePageChange(1)}} //without page reset would often get no products displayed on filter application due to the activePage state remaining at the page that was active at the time of filter application
                     inuse={filter.inuse}
@@ -92,9 +92,8 @@ class ProductsPage extends React.Component{
                 return <div>No products match the filter criteria selected above.</div>
             } 
     }
-    constructor(props) { //set initial state
-        super(props);
-        this.state = {activePage: 1};
+    state = {
+        activePage: 1
     }
     handlePageChange(pageNumber) {
         this.setState({activePage: pageNumber});
@@ -104,8 +103,8 @@ class ProductsPage extends React.Component{
             if (this.props.products.length > this.state.activePage * 12 && this.state.activePage > 1) { //if there are products following AND preceding the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(1)}
-                        onclick2={() => this.handlePageChange(2)}
+                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
+                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
                         disabled1={false}
                         disabled2={false}
                     />
@@ -113,8 +112,8 @@ class ProductsPage extends React.Component{
             } else if (this.props.products.length > this.state.activePage * 12) { //if there are only products following the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(1)}
-                        onclick2={() => this.handlePageChange(2)}
+                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
+                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
                         disabled1={true}
                         disabled2={false}
                     />
@@ -122,8 +121,8 @@ class ProductsPage extends React.Component{
             } else if (this.state.activePage > 1) { //if there are only products preceding the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(1)}
-                        onclick2={() => this.handlePageChange(2)}
+                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
+                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
                         disabled1={false}
                         disabled2={true}
                     />
@@ -175,7 +174,7 @@ function mapStateToProps(state , ownProps) {
     let brandFilters = state.brandFilters;
     let filtered_brandFilters = brandFilters;
     filtered_brandFilters = filtered_brandFilters.filter(
-        filter => filter.type === ownProps.match.params.type
+        filter => filter.type === ownProps.match.params.type //gets type from the the route params and finds products which have type that matches
     )
     let priceRangeFilters = state.priceRangeFilters;
     let filtered_priceRangeFilters = priceRangeFilters;
@@ -189,7 +188,7 @@ function mapStateToProps(state , ownProps) {
     let products = state.products;
     let filtered_products = products;
     filtered_products = filtered_products.filter(
-        product => product.type === ownProps.match.params.type //gets type from the the route params and finds products which have type that matches
+        product => product.type === ownProps.match.params.type
     )
     let activeBrandFilters = filtered_brandFilters.filter(
         item => item.inuse === true
@@ -221,8 +220,8 @@ function mapStateToProps(state , ownProps) {
     };
 };
 
-function matchDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch){
     return bindActionCreators({changeBrandFilter: changeBrandFilter, changePriceFilter: changePriceFilter}, dispatch);
 };
 
-export const ProductsPageContainer = connect(mapStateToProps, matchDispatchToProps)(ProductsPage);
+export const ProductsPageContainer = connect(mapStateToProps, mapDispatchToProps)(ProductsPage);
