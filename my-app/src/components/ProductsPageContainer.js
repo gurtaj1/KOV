@@ -61,7 +61,6 @@ class ProductsPage extends React.Component{
             var filterDivExtension = document.querySelector('.filterDivExtension');
             var chevronUp = document.querySelector('#chevronUp');
             var chevronDown = document.querySelector('#chevronDown');
-            var icon;
 			if (filterDivExtension.style.display === 'block') {
                 filterDivExtension.style.display = 'none';
                 chevronUp.style.display = 'none';
@@ -137,23 +136,25 @@ class ProductsPage extends React.Component{
                 <div className="container">
                     {this.createCategoryOverview()}
                     <div className="row">
-                        <div className= "filterDiv col-12">
-                            <div className="iconCrossbar">
-                                <i id="chevronDown" className="fa fa-chevron-down" onClick={this.filterDivExtenionToggle}></i>
-                                <i id="chevronUp" className="fa fa-chevron-up" onClick={this.filterDivExtenionToggle}></i>
-                            </div>
-                            <div className="filterDivExtension">
-                                <div className="row">
-                                    <div className="filtersList col-md-6 col-12">
-                                        Filter by Brand:
-                                        <div>
-                                            {this.createBrandFilterList()}
+                        <div className="col-12">
+                            <div className= "filterDiv">
+                                <div className="iconCrossbar">
+                                    <i id="chevronDown" className="fa fa-chevron-down" onClick={this.filterDivExtenionToggle}></i>
+                                    <i id="chevronUp" className="fa fa-chevron-up" onClick={this.filterDivExtenionToggle}></i>
+                                </div>
+                                <div className="filterDivExtension">
+                                    <div className="row">
+                                        <div className="filtersList col-md-5 col-11 mx-auto">
+                                            Filter by Brand:
+                                            <div>
+                                                {this.createBrandFilterList()}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="filtersList col-md-6 col-12">
-                                        Filter by Price Range:
-                                        <div>
-                                            {this.createPriceRangeFilterList()}
+                                        <div className="filtersList col-md-5 col-11 mx-auto">
+                                            Filter by Price Range:
+                                            <div>
+                                                {this.createPriceRangeFilterList()}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

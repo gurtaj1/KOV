@@ -3,3 +3,27 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+html {                            /*this and below is required to keep the footer at the bottom of the page, if content doesn't fill view; and below all content if content exceeds view field.*/
+  height: 100%;
+  box-sizing: border-box;            /*incude content, padding, and border in width and height properties*/
+}
+
+*,                                   /*note that * selects all elements, before selects what comes before an element, after selects what comes after an element. box-sizing defines how the height and width of elements is calculated - include padding and borders or not?*/
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 19rem;
+  min-height: 100%;              /*this and above is required to keep the footer at the bottom of the page, if content doesn't fill view; and below all content if content exceeds view field.*/
+}
+
+@media only screen and (min-width: 768px) { /*smaller distance between body and footer when viewing on bigger screen (also using the adjustments made earlier for body styling and in the styling for the footer)*/
+    body {
+      padding-bottom: 10rem;
+    }
+}

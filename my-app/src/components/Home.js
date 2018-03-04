@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import HomeCSS from './Home.css';
 
@@ -13,10 +14,86 @@ import ELiquidsBannerSmokePattern from '../product_images/flavours/eliquidsbanne
 import ELiquidsBannerPattern from '../product_images/flavours/eliquidsbannerpattern.jpg';
 import HomeBannerSmoke from '../product_images/home/homebannersmoke.jpg';
 
+import TanksCat from '../product_images/tanks/tankscat.jpg'
+import EliquidsCat from '../product_images/flavours/eliquidscat.jpg'
+import KitsCat from '../product_images/kits/kitscat.jpg';
+
 class Home extends React.Component {
+	smallHomeIntroToggle () {
+            var smallHomeIntro = document.querySelector('.smallHomeIntro');
+            var pullDownTop = document.querySelector('.pullDownTop');
+            var pullUpTop = document.querySelector('.pullUpTop');
+			if (smallHomeIntro.style.display === 'block') {
+                smallHomeIntro.style.display = 'none';
+                pullUpTop.style.display = 'none';
+                pullDownTop.style.display = 'block';
+			} else {
+                smallHomeIntro.style.display = 'block';
+                pullUpTop.style.display = 'block';
+                pullDownTop.style.display = 'none';
+			}
+    }
     render() {
         return (
             <div className="container">
+
+                <div className="homeHeadBig">
+                    <div className="row text-center">
+                        <div className="col-12 mx-auto homeHeader">
+                            <h1>KING OF VAPE</h1>
+                        </div>
+                        <div className="col-12">
+                            <div className="underlinerOutside">
+                                <div className="underlinerInside">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row text-center">
+                        <div className="bigHomeIntro">
+                            <div className="col-10 mx-auto">
+                                ..the Kingdom for True Vapers. Here at King Of Vape we pride ourselves on knowing just what every kind of vaper needs, and also in having a vast range of products that satisfies such needs. Whether you be a Cloud Chaser or a Flavour Connoisseur, after an Update on your Kit, looking for a Fresh, new, Mouth Watering Flavour, or simply just after a quick Craving Quencher, we've got just what you need! And if, for some bizarre reason,  we don't have what you need, we assure you that we are certainly in the process of getting it! Don't just take our word for it though, have a browse through our online catalogue or even come into the store for a perusal and some pointers if you like, we promise we won't bite!
+                            </div>
+                            <div className="col-12">
+                                <div className="underlinerOutside">
+                                    <div className="underlinerInside">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="homeHeadSmall">
+                    <div className="row text-center">
+                        <div className="col-12 mx-auto homeHeader">
+                            <h1>KING OF VAPE</h1>
+                        </div>
+                        <div className="col-12">
+                            <div className="activeUnderliner" onClick={this.smallHomeIntroToggle}>
+                                <div className="underlinerInside">
+                                    <i className="pullDownTop fa fa-chevron-down"></i>
+                                    <i className="pullUpTop fa fa-chevron-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row text-center">
+                        <div className="smallHomeIntro">
+                            <div className="col-10 mx-auto">
+                                ..the Kingdom for True Vapers. Here at King Of Vape we pride ourselves on knowing just what every kind of vaper needs, and also in having a vast range of products that satisfies such needs. Whether you be a Cloud Chaser or a Flavour Connoisseur, after an Update on your Kit, looking for a Fresh, new, Mouth Watering Flavour, or simply just after a quick Craving Quencher, we've got just what you need! And if, for some bizarre reason,  we don't have what you need, we assure you that we are certainly in the process of getting it! Don't just take our word for it though, have a browse through our online catalogue or even come into the store for a perusal and some pointers if you like, we promise we won't bite!
+                            </div>
+                            <div className="col-12">
+                                <div className="activeUnderliner" onClick={this.smallHomeIntroToggle}>
+                                    <div className="underlinerInside">
+                                        <i className="pullUpBottom fa fa-chevron-up"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="row">
                     <div id="myCarousel" className="carousel slide col-10 mx-auto" data-ride="carousel">
                         <ol className="carousel-indicators">
@@ -31,13 +108,13 @@ class Home extends React.Component {
                                 <img className="d-block w-100" src={HomeBannerSmoke} alt="pic1" />
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src={TanksBannerPattern} alt="pic2" />
+                                <Link to="/products/tanks"><img className="d-block w-100" src={TanksBannerPattern} alt="pic2" /></Link>
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src={ELiquidsBannerSmoke} alt="pic3" />
+                                <Link to="/products/eliquids"><img className="d-block w-100" src={ELiquidsBannerSmoke} alt="pic3" /></Link>
                             </div>
                             <div className="carousel-item">
-                                <img className="d-block w-100" src={KitsBannerPattern} alt="pic4" />
+                                <Link to="/products/kits"><img className="d-block w-100" src={KitsBannerPattern} alt="pic4" /></Link>
                             </div>
                         </div>
 
@@ -51,6 +128,25 @@ class Home extends React.Component {
                         </a>
                     </div>
                 </div>
+
+                <div className="row categoryPics">
+                    <div className="col-12">
+                        <div className="underlinerOutside" >
+                            <div className="underlinerInside">
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-8 col-md-4 mx-auto">
+                        <Link to="/products/tanks"><img className="d-block w-100" src={TanksCat} alt="cat pic 1" /></Link>
+                    </div>
+                    <div className="col-8 col-md-4 mx-auto">
+                        <Link to="/products/eliquids"><img className="d-block w-100" src={EliquidsCat} alt="cat pic 2" /></Link>
+                    </div>
+                    <div className="col-8 col-md-4 mx-auto">
+                        <Link to="/products/kits"><img className="d-block w-100" src={KitsCat} alt="cat pic 3" /></Link>
+                    </div>
+                </div>
+
             </div>
         )
     }

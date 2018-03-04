@@ -10,15 +10,19 @@ import Logo from '../product_images/logo.png';
 
 
 class NavComponent extends React.Component{
-	getData() {
-		var formData = new FormData(document.getElementById("searchBar"));
-        var inputValue = document.getElementById("searchBox").value;
-        document.getElementById("searchBox").value = "";
-        this.props.push("/searchresults/"+inputValue); //push new url to history (navigates page to new url)
-    }
-    searchEnter(e) { //e represents the 'event'
+    searchEnterWide(e) { //e represents the 'event'
         if (e.keycode == 13 || e.which == 13) {
-            return this.getData();
+			var inputValue = document.getElementById("wideSearchBox").value;
+			document.getElementById("wideSearchBox").value = "";
+			this.props.push("/searchresults/"+inputValue); //push new url to history (navigates page to new url)
+        }
+	}
+    searchEnterNarrow(e) { 
+        if (e.keycode == 13 || e.which == 13) {
+			var inputValue = document.getElementById("narrowSearchBox").value;
+			document.getElementById("narrowSearchBox").value = "";
+			this.props.push("/searchresults/"+inputValue);
+			this.linksToggle();
         }
     }
 	render() {
@@ -26,33 +30,26 @@ class NavComponent extends React.Component{
 			<div>
 			<nav>
 				<div className="navWide">
-					<div className="wideDiv">
-						<Link to='/' className="homePage"><img src={Logo} alt="Company Logo" /></Link>
-						<Link to='/products/kits' className="kitsPage">Kits</Link>
-						<Link to="/products/tanks" className="tanksPage">Tanks</Link>
-						<Link to="/products/coils" className="coilsPage">Coils</Link>
-						<Link to="/products/eliquids" className="eLiquidsPage">E-Liquids</Link>
-						<Link to="/products/batteries" className="batteriesPage">Batteries</Link>
-                        <input className="form-control mr-sm-2" id="searchBox" onKeyDown={(key) => this.searchEnter(key)} type="search" name="input" placeholder="Search Products" aria-label="Search"/> {/*'key' in the onKeyDown function represents the key press event (could have used any word)*/}
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={() => this.getData()}>Search</button>
-						<Link to="/basket" className="basketPage">Basket</Link>
-					</div>
+					<Link to='/' className="homePage"><img src={Logo} alt="Company Logo" /></Link>
+					<Link to='/products/kits' className="kitsPage">Kits</Link>
+					<Link to="/products/tanks" className="tanksPage">Tanks</Link>
+					<Link to="/products/coils" className="coilsPage">Coils</Link>
+					<Link to="/products/eliquids" className="eLiquidsPage">E-Liquids</Link>
+					<Link to="/products/batteries" className="batteriesPage">Batteries</Link>
+					<input className="form-control mr-sm-2" id="wideSearchBox" onKeyDown={(key) => this.searchEnterWide(key)} type="search" name="input" placeholder="Search Products" aria-label="Search"/> {/*'key' in the onKeyDown function represents the key press event (could have used any word)*/}
+					<Link to="/basket" className="basketPage">Basket</Link>
 				</div>
 				<div className="navNarrow">
 					<i className="fa fa-bars" onClick={this.linksToggle}></i>
 						<div className="narrowLinks">
 							<Link to='/' className="homePage" onClick={this.linksToggle}><img src={Logo} alt="Company Logo" /></Link>
-							<form action="./results.php" method="get">
-								<input className="narrowSearchBox" type="text" name="input" placeholder="Search" />
-
-								<input type="submit" value="Search" />
-							</form>
+							<input className="form-control mr-sm-2" id="narrowSearchBox" onKeyDown={(key) => this.searchEnterNarrow(key)} type="search" name="input" placeholder="Search Products" aria-label="Search"/> {/*'key' in the onKeyDown function represents the key press event (could have used any word)*/}
 							<Link to='/products/kits' className="kitsPage" onClick={this.linksToggle}>Kits</Link>
 							<Link to="/products/tanks" className="tanksPage" onClick={this.linksToggle}>Tanks</Link>
 							<Link to="/products/coils" className="coilsPage" onClick={this.linksToggle}>Coils</Link>
 							<Link to="/products/eliquids" className="eLiquidsPage" onClick={this.linksToggle}>E-Liquids</Link>
 							<Link to="/products/batteries" className="batteriesPage" onClick={this.linksToggle}>Batteries</Link>
-							<Link to="/basket" className="basketPage">Basket</Link>
+							<Link to="/basket" className="basketPage" onClick={this.linksToggle}>Basket</Link>
 						</div>
 				</div>
 			</nav>

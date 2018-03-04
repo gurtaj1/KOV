@@ -13,7 +13,7 @@ class BasketCheckout extends React.Component {
                     </div>
                 </div>
                 <div className="row checkout">
-                    <button className="btn btn-success btn-lg col-12 col-sm-6 col-md-3 ml-auto">CHECKOUT</button>
+                    <button className="btn btn-success btn-lg col-12 col-sm-6 col-md-3 ml-auto" disabled={true}>CHECKOUT</button>
                 </div>
             </div>
     )
