@@ -7,8 +7,8 @@ class BasketProductsListItem  extends React.Component{
         return (
             <div className="basketProductItem col-md-12 col-12">
                 <div className="basketProductThumb">
-                    <Link to={this.props.link}><img className="basketProductImage" src={this.props.image}/></Link>
-                    <p className="basketProductPoint">{this.props.model.toUpperCase()}</p>
+                    <Link to={this.props.link}><img className="basketProductImage" src={this.props.image} alt="basket product"/></Link>
+                    <p className="basketProductPoint" id="basketModelName">{this.props.model.toUpperCase()}</p>
                 </div>
                 <div className="basketProductAPB">
                     <p className="basketProductPoint">{"Qty:"+this.props.qty}</p>

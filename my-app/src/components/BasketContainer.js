@@ -7,7 +7,6 @@ import removeFromBasket from '../actions/removeFromBasket';
 
 import BasketProductsListItem from './basketProductsListItem';
 import BasketCheckout from './BasketCheckout';
-import BasketProductListItemCSS from './BasketProductListItem.css';
 
 class Basket  extends React.Component {
     createBasketProductsList () {
@@ -52,10 +51,10 @@ class Basket  extends React.Component {
                 <div className="row">
                     <h2 id="basketHeader">Your Basket</h2>
                 </div>
-                <div class="row">
+                <div className="row">
                     {this.createBasketProductsList()}
                 </div>
-                <div>
+                <div className="row">
                     {this.createCheckout()}
                 </div>
             </div>

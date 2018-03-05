@@ -4,8 +4,6 @@ import {connect} from 'react-redux';
 import ProductsListItem from './ProductsListItem';
 import Pagination from './Pagination';
 
-import SearchResultsContainerCSS from './SearchResultsContainer.css'
-
 class SearchResults extends React.Component {
     getResults() {
         if (this.props.products.length > 0) {
@@ -21,6 +19,10 @@ class SearchResults extends React.Component {
                             link={"/"+product.type+"/"+product.id}
                         />
                     )
+                } else {
+                    return (
+                        ""         //essentially return nothing. added this because kept getting an array-call-back-return warning in the browser when running code. This applies to methods like map, filter, every, reduce etc. where a return statement is ALWAYS (so for each case) expected.
+                    )        
                 }
             })
         } else {
@@ -97,11 +99,12 @@ function mapStateToProps(state, ownProps) {
             return queryArray.every(function(query){                //struggled for so long before realising the 'return' here was necessary for the enclosing filter function to actually extract anything from the productsCopy (array of objects) upon which it was called. - without 'return' written, the every function would still have returned true for the products which matched all terms in the search query, but it would have just been like writing 'true' on its own within the filter function, rather than 'return true' which is what is needed.
                 for (var i=1; i<4; i++) {                         //iterate from index 1 to 4 rather than whole length of productArray as only want to seach in the 'type', 'brand', and 'model' of the product (may edit this to include product 'text' later)
                     if (typeof productArray[i] === "string") {
-                        if (productArray[i].indexOf(query) != -1) {
+                        if (productArray[i].indexOf(query) !== -1) {
                             return true;
-                        }
+                        } 
                     }
                 }
+                return false;  //this return is needed in order to fulfil the array-callback-return requirement for the every function. See the comment on the map function in the componenet above.
             })
 
         })

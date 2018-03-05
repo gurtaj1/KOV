@@ -6,9 +6,8 @@ import changeBrandFilter from '../actions/changeBrandFilter';
 import changePriceFilter from '../actions/changePriceFilter';
 
 import CategoryOverview from './CategoryOverview';
-import Filter from './Filter';
+import FiltersLists from './FiltersLists';
 import ProductsListItem from './ProductsListItem';
-import ProductsPageContainerCSS from './ProductsPageContainer.css';
 import Pagination from './Pagination';
 
 class ProductsPage extends React.Component{
@@ -27,52 +26,22 @@ class ProductsPage extends React.Component{
             )
         })
     }
-    createBrandFilterList() {
-        let i = 1;
-        return this.props.brandFilters.map(filter => {
-            i++
-            return (
-                <Filter
-                    key={filter.brand+i+"brand"}
-                    name={this.props.match.params.type + "brandFilter"} //so that each seperate group of radio buttons (filters) refer only to each other. (the name is shared within each group)
-                    id={filter.brand}
-                    changeFilterResetPageNumber={() => {this.props.changeBrandFilter(filter); this.handlePageChange(1)}} //without page reset would often get no products displayed on filter application due to the activePage state remaining at the page that was active at the time of filter application
-                    inuse={filter.inuse}
-                />
-            )
-        })
-    }
-    createPriceRangeFilterList() {
-        let i = 1;
-        return this.props.priceRangeFilters.map(filter => {
-            i++
-            return (
-                <Filter
-                    key={filter.priceRange+i+"priceRange"}
-                    name={this.props.match.params.type + "priceFilter"} 
-                    id={filter.priceRange}
-                    changeFilterResetPageNumber={() => {this.props.changePriceFilter(filter); this.handlePageChange(1)}}
-                    inuse={filter.inuse}
-                />
-            )
-        })
-    }
-	filterDivExtenionToggle () {
-            var filterDivExtension = document.querySelector('.filterDivExtension');
-            var chevronUp = document.querySelector('#chevronUp');
-            var chevronDown = document.querySelector('#chevronDown');
-			if (filterDivExtension.style.display === 'block') {
-                filterDivExtension.style.display = 'none';
-                chevronUp.style.display = 'none';
-                chevronDown.style.display = 'block';
-			} else {
-                filterDivExtension.style.display = 'block';
-                chevronUp.style.display = 'block';
-                chevronDown.style.display = 'none';
-			}
+    createFiltersLists() {
+        return (
+            <FiltersLists
+                brandFilters={this.props.brandFilters}
+                priceRangeFilters={this.props.priceRangeFilters}
+                type={this.props.match.params.type}
+                brandFilterClick={this.props.changeBrandFilter} //action creator passed down. this will not be called on the component that this function creates, but on the element in the component that is rendered by the component that this function creates - (ProductsPageContainer > FiltersLists > Filter - **input**). this is why no curley brackets. '()' were used here but in the component below - follow this action down the tree for more clarity.
+                priceFilterClick={this.props.changePriceFilter}
+             />
+        )
     }
     createProductsList() {
         if(this.props.products.length > 0) {
+            if(Math.ceil(this.props.products.length/12) < this.state.activePage) {
+                this.setState({activePage: 1});
+            }
             return this.props.products.map(product =>{
                 if (this.props.products.indexOf(product) >= (this.state.activePage*12) - 12 && this.props.products.indexOf(product) < (this.state.activePage*12)) { //render the 12 (number of products per page) products that correspond to the current (active) page
                     return (
@@ -85,25 +54,26 @@ class ProductsPage extends React.Component{
                             link={"/"+this.props.match.params.type+"/"+product.id}
                         />
                     )
+                } 
+                else {
+                    return (
+                        ""
+                    )
                 }
-
-            })} else {
-                return <div>No products match the filter criteria selected above.</div>
-            } 
+        })} else {
+            return <div>No products match the filter criteria selected above.</div>
+        } 
     }
     state = {
         activePage: 1
-    }
-    handlePageChange(pageNumber) {
-        this.setState({activePage: pageNumber});
     }
     createPagination() {
         if (this.props.products.length > 12) {
             if (this.props.products.length > this.state.activePage * 12 && this.state.activePage > 1) { //if there are products following AND preceding the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
-                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
+                        onclick1={() => this.setState({activePage: this.state.activePage - 1})}
+                        onclick2={() => this.setState({activePage: this.state.activePage + 1})}
                         disabled1={false}
                         disabled2={false}
                     />
@@ -111,8 +81,8 @@ class ProductsPage extends React.Component{
             } else if (this.props.products.length > this.state.activePage * 12) { //if there are only products following the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
-                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
+                        onclick1={() => this.setState({activePage: this.state.activePage - 1})}
+                        onclick2={() => this.setState({activePage: this.state.activePage + 1})}
                         disabled1={true}
                         disabled2={false}
                     />
@@ -120,8 +90,8 @@ class ProductsPage extends React.Component{
             } else if (this.state.activePage > 1) { //if there are only products preceding the current page
                 return (
                     <Pagination 
-                        onclick1={() => this.handlePageChange(this.state.activePage - 1)}
-                        onclick2={() => this.handlePageChange(this.state.activePage + 1)}
+                        onclick1={() => this.setState({activePage: this.state.activePage - 1})}
+                        onclick2={() => this.setState({activePage: this.state.activePage + 1})}
                         disabled1={false}
                         disabled2={true}
                     />
@@ -136,30 +106,7 @@ class ProductsPage extends React.Component{
                 <div className="container">
                     {this.createCategoryOverview()}
                     <div className="row">
-                        <div className="col-12">
-                            <div className= "filterDiv">
-                                <div className="iconCrossbar">
-                                    <i id="chevronDown" className="fa fa-chevron-down" onClick={this.filterDivExtenionToggle}></i>
-                                    <i id="chevronUp" className="fa fa-chevron-up" onClick={this.filterDivExtenionToggle}></i>
-                                </div>
-                                <div className="filterDivExtension">
-                                    <div className="row">
-                                        <div className="filtersList col-md-5 col-11 mx-auto">
-                                            Filter by Brand:
-                                            <div>
-                                                {this.createBrandFilterList()}
-                                            </div>
-                                        </div>
-                                        <div className="filtersList col-md-5 col-11 mx-auto">
-                                            Filter by Price Range:
-                                            <div>
-                                                {this.createPriceRangeFilterList()}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {this.createFiltersLists()}
                     </div>
                     <div className="row productsList">
                         {this.createProductsList()}
@@ -195,7 +142,7 @@ function mapStateToProps(state , ownProps) {
         item => item.inuse === true
     );
     activeBrandFilters.forEach(filter => {
-        if (filter.brand != "ALL") {
+        if (filter.brand !== "ALL") {
             filtered_products = filtered_products.filter(
                 product => product.brand === filter.brand
             )
@@ -205,7 +152,7 @@ function mapStateToProps(state , ownProps) {
         item => item.inuse === true
     );
     activePriceRangeFilters.forEach(filter => {
-        if (filter.priceRange != "ALL") {
+        if (filter.priceRange !== "ALL") {
             filtered_products = filtered_products.filter(
                 product => product.priceRange === filter.priceRange
             );

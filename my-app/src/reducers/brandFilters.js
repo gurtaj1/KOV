@@ -1,5 +1,3 @@
-import lodash from 'lodash';
-
 const initialState = [  {type: 'kits', brand: 'ALL', inuse: true},
                         {type: 'kits', brand: 'eleaf', inuse: false},
                         {type: 'kits', brand: 'innokin', inuse: false},
@@ -13,12 +11,10 @@ const initialState = [  {type: 'kits', brand: 'ALL', inuse: true},
                         {type: 'coils', brand: 'ALL', inuse: true},
                         {type: 'coils', brand: 'aspire', inuse: false},
                         {type: 'coils', brand: 'innokin', inuse: false},
-                        {type: 'coils', brand: 'isub', inuse: false},
                         {type: 'coils', brand: 'kangertech', inuse: false},
                         {type: 'coils', brand: 'smok', inuse: false},
                         {type: 'coils', brand: 'vaporesso', inuse: false},
                         {type: 'eliquids', brand: 'ALL', inuse: true},
-                        {type: 'eliquids', brand: 'monsta vape', inuse: false},
                         {type: 'eliquids', brand: 'mr cloud', inuse: false},
                         {type: 'eliquids', brand: "pick 'n' mix", inuse: false},
                         {type: 'eliquids', brand: 'vado', inuse: false},
@@ -28,16 +24,15 @@ const initialState = [  {type: 'kits', brand: 'ALL', inuse: true},
                     ];      
                             
 function changeFilter(stateFilters, filter) {
-    let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState) not tht slice does not change the array that calls it (non-mutating)
-    let correctFilter = lodash.find(newFilters, newFilter => newFilter.brand === filter.brand && newFilter.type === filter.type); //finds filter which satisfies the function-invoked within the newFilters array : find(collection to inspect, the function invoked per iteration). note that we change the filter that matches brand AND (product) type so that we do not change the values of the filters which are displayed on other, product type, routes.
-    correctFilter.inuse = true; //changes it to opposite boolean of what it currently is
+    let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState) note tht slice does not change the array that calls it (non-mutating)
     for (var i=0; i<newFilters.length; i++) {
-        if (newFilters[i].brand !== filter.brand && newFilters[i].type === filter.type) {
+        if (newFilters[i].brand === filter.brand && newFilters[i].type === filter.type) {
+            newFilters[i].inuse = true
+        } else if (newFilters[i].type === filter.type) {
             newFilters[i].inuse = false;
         }
-    }; //this for loop changes all non-selected, (product-)type matching, filters' 'disabled' properties, to true (disables all other filters). note that we change the filters that matches (product) type ONLY so that we do not change the values of the filters which are displayed on other, product type, routes.
+    } //this for loop changes all non-selected, (product-)type matching, filters' 'inuse' properties to false, and changes the filter that was selected to inuse = true. note that we change the filters that matches (product) type ONLY so that we do not change the values of the filters which are displayed on other, product type, routes.
     return newFilters; //returns new altered state
-    
 }
 
 export default function(state = initialState, action) {
@@ -47,5 +42,4 @@ export default function(state = initialState, action) {
         default:
             return state;
     }
-    return state;
 };

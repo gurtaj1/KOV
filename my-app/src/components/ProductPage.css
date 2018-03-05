@@ -1,6 +1,8 @@
 .title {
     text-align: center;
     color: black;
+    margin-top: 10px;
+    color: #3CA500;
 }
 
 .productPageImage img {
@@ -14,7 +16,7 @@
     display: block;
     float: right;
     background-color: rgba(103, 243, 22, 0.0);
-    border: 1px solid green;
+    border: 2px solid green;
     border-radius: 5px;
     box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
 }

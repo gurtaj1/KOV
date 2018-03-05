@@ -27,3 +27,529 @@ body {
       padding-bottom: 10rem;
     }
 }
+
+
+.container {                               /*container used here to apply to text within ALL components that have class container*/
+    font-family: 'Righteous', cursive;
+}
+
+/*-----------------------------------------NavComponentContainer----------------------------------------*/
+
+nav {
+	background-color: #3CA500;
+	overflow: hidden;
+	padding: 1em;
+	box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+	font-family: 'Righteous', cursive;
+	font-size: 16px;
+}
+
+.navWide {
+	display: none;
+	margin: 0 auto;
+}
+
+.navWide{
+	text-align: center;
+}
+
+.navWide img {
+	max-height: 50px;
+	margin-top: -10px;
+}
+
+.navWide a {
+	color: #FFF;
+	text-decoration: none;
+	padding: 0 0.5em;
+	display: inline;
+}
+
+.navWide a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.navWide form {
+	padding: 0 0.5em;
+	display: inline;
+}
+
+.navWide #wideSearchBox {
+	display: inline;
+	width: 155px;
+	margin-left: 12px;
+}
+
+.navNarrow i {
+	color: #FFF;
+	float: left;
+	cursor: pointer;
+}
+
+.narrowLinks {
+	display: none;
+}
+
+.narrowLinks a {
+	display: block;
+	float: left;
+	clear: left;
+	padding: 0.5em 0;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.narrowLinks a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+
+.narrowLinks img {
+	max-height: 30px;
+}
+
+.narrowLinks #narrowSearchBox {
+
+	float: left;
+	clear: left;
+}
+
+
+
+@media only screen and (min-width: 768px) { /*this is the width that is classed as medium screensize in bootstrap*/
+	    .navWide {
+		display: block;
+		}
+		.navNarrow {
+			display: none;
+		}
+}
+
+/*-----------------------------------------Home----------------------------------------*/
+
+.container {
+    color: black;
+}
+
+.homeHeader {
+    margin-top: 10px;
+}
+
+.homeHeader h1 {
+    font-size: 50px;
+}
+
+.underlinerOutside {
+    background-color: #3CA500;
+    border-radius: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.underlinerInside {
+    border-radius: 5px;
+    background-color: #009900;
+    height: 10px;
+    font-size: 10px;
+}
+
+.activeUnderliner {
+    background-color: #3CA500;
+    border-radius: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.pullDownTop {
+    display: block;
+    color: white;
+}
+
+.pullUpTop {
+    display: none;
+    color: white;
+}
+
+.pullUpBottom {
+    display: block;
+    color: white;
+}
+
+.homeHeadSmall {
+    display: block;
+}
+
+.smallHomeIntro {
+    display: none;
+    margin-bottom: 10px;
+    color: #3CA500;
+}
+
+.bigHomeIntro {
+    margin-bottom: 10px;
+    color: #3CA500;
+}
+
+.homeHeadBig {
+    display: none;
+}
+
+#myCarousel {
+    margin: 10px 0px;
+    display: block;
+}
+
+.carousel-indicators {
+    cursor: pointer;
+}
+
+.carousel-inner {
+    border-radius: 5px;
+}
+
+.categoryPics img {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 768px) { /**/
+        .homeHeadSmall {
+            display: none;
+        }
+        .homeHeadBig {
+            display: block;
+        }
+        .categoryPics img {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+}
+
+/*-----------------------------------------ProductsPageContainer----------------------------------------*/
+
+.categoryOverviewBlock {
+    margin: 10px 0;
+}
+
+.categoryOverviewText {
+    color: #3CA500;
+    display: inline-block;
+    text-align: center;
+    margin: 0px auto auto auto;
+}
+
+.categoryOverviewText h1 {
+    color: black;
+}
+
+.categoryOverviewImg {
+    display: inline-block;
+}
+
+.categoryOverviewImg img {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+
+.filterDiv {
+    background-color: #3CA500;
+    border-radius: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.iconCrossbar {
+    border-radius: 5px;
+    background-color: #009900;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#chevronDown {
+    display: block;
+    color: white;
+}
+
+#chevronUp {
+    display: none;
+    color: white;
+}
+
+.filterDivExtension{
+    margin-top: 10px;
+    display: none;
+}
+
+.filtersList {
+    text-align: left;
+    font-weight: bold;
+}
+
+.filtersList label {
+    font-weight: initial;
+    font-size: 16px;
+    color: white;
+}
+
+.filter{
+    display: inline-block;
+}
+
+.filter input {
+    cursor: pointer;
+}
+
+.productThumb {
+    display: inline-block;
+    text-align: center;
+}
+
+.productThumbImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 150px;
+}
+
+.productPoint {
+    display: block;
+    margin: 0px;
+}
+
+#modelName {
+    font-size: 12px;
+    height: 30px;
+    color: #3CA500;
+}
+
+#thumbPrice {
+    font-size: 12px;
+    color: red;
+    display: block;
+}
+
+.addOrRemove {
+    display: block;
+}
+
+.pagination {
+    display: inline-block;
+    margin: auto;
+}
+
+/*-----------------------------------------ProductPageContainer----------------------------------------*/
+
+.title {
+    text-align: center;
+    color: black;
+    margin-top: 10px;
+    color: #3CA500;
+}
+
+.productPageImage img {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+
+.productBreakdown {
+    display: block;
+    float: right;
+    background-color: rgba(103, 243, 22, 0.0);
+    border: 2px solid green;
+    border-radius: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68);
+}
+
+.productDescription {
+    margin-top: 10px;
+}
+
+.colorDropdown {
+    display: block;
+    float: left
+}
+
+#productPagePrice {
+    float: left;
+    color: red;
+}
+
+#addToBasket {
+    float: right;
+    margin-top: -2px;
+}
+
+.otherProductReminder img {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 35px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+	    .row {
+		position: relative;
+		}
+		 .add {
+			position: absolute;
+            bottom: 0;
+
+;		} 
+}
+
+/*-----------------------------------------SearchResultsContainer----------------------------------------*/
+
+#searchTerm {
+    color: red;
+}
+
+/*-----------------------------------------BasketContainer----------------------------------------*/
+
+#basketHeader {
+    margin: 10px auto;
+}
+
+#emptyBasket {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.basketProductItem {
+    display: inline-block;
+    text-align: center;
+    margin: 2px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    height: 180px;
+}
+
+.basketProductThumb {
+    float: left; 
+}
+
+.basketProductImage {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.basketProductPoint {
+    display: block;
+    margin: 0px;
+}
+
+.basketProductAPB {
+    margin-top: 40px;
+    float: right;
+}
+
+#basketModelName {
+    color: #3CA500;
+}
+
+#basketProductPrice {
+    color: red;
+    display: block;
+}
+
+.addOrRemove {
+    display: block;
+}
+
+button {
+    margin: 5px;
+    box-shadow: 0.7px 1px 5px 0px rgba(0, 0, 0, 0.68), inset -0.01px -0.06px 1.2px 0.01px #89847e;
+}
+
+button:active{
+    transform: translate(0.7px, 1px);
+    box-shadow: none;
+}
+
+.qtyInc {
+    height: 40x;
+    width: 40px;
+}
+
+.totalHeader {
+    float: left;
+    color: #009900;
+}
+
+.totalBasketPrice {
+    color: red;
+}
+
+/*-----------------------------------------FooterContainer----------------------------------------*/
+
+
+.footer {                
+    position: absolute;    /*this and below is required to keep the footer at the bottom of the page, if content doesn't fill view; and below all content if content exceeds view field.*/
+    right: 0;
+    bottom: 0;
+    left: 0;               /*this and above is required to keep the footer at the bottom of the page, if content doesn't fill view; and below all content if content exceeds view field.*/
+}
+.footer {
+    width: 100%;
+    background-color: #3CA500; /*#009900*/
+    box-shadow: -0.7px -1px 5px 0px rgba(0, 0, 0, 0.68);
+    font-size: 11px;
+}
+
+.footerContents {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.footer a {
+    color: black;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer i {
+    font-size: 25px;
+    margin: 5px;
+}
+
+.smallDisclaimer {
+    font-size: 9px;
+}
+
+    .bigDisclaimer {
+      margin-bottom: 10px;
+    }
+    .address {
+      margin-bottom: 10px;
+    }
+
+@media only screen and (min-width: 768px) { /*no longer need to keep these divs spaced in larger screen since they are now side by side, not on top of one another*/
+    .bigDisclaimer {
+      margin-bottom: 0px;
+    }
+    .address {
+      margin-bottom: 0px;
+    }
+}

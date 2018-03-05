@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ProductPageCSS from './ProductPage.css';
 
 class ProductPageTop extends React.Component {
     render() {
@@ -14,7 +12,7 @@ class ProductPageTop extends React.Component {
                 <div className="row">
                     <div className="col-md-3 col-12 mx-auto">
                         <div className="productPageImage">
-                            <img src={this.props.productImage} />
+                            <img src={this.props.productImage} alt="product"/>
                         </div>
                     </div>
                     <div className="col-md-8 col-11 mx-auto productBreakdown">

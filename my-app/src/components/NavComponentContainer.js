@@ -4,21 +4,19 @@ import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {bindActionCreators} from 'redux';
 
-import './NavComponent.css';
-
 import Logo from '../product_images/logo.png';
 
 
 class NavComponent extends React.Component{
     searchEnterWide(e) { //e represents the 'event'
-        if (e.keycode == 13 || e.which == 13) {
+        if (e.keycode === 13 || e.which === 13) {
 			var inputValue = document.getElementById("wideSearchBox").value;
 			document.getElementById("wideSearchBox").value = "";
 			this.props.push("/searchresults/"+inputValue); //push new url to history (navigates page to new url)
         }
 	}
     searchEnterNarrow(e) { 
-        if (e.keycode == 13 || e.which == 13) {
+        if (e.keycode === 13 || e.which === 13) {
 			var inputValue = document.getElementById("narrowSearchBox").value;
 			document.getElementById("narrowSearchBox").value = "";
 			this.props.push("/searchresults/"+inputValue);

@@ -3,7 +3,7 @@ import React from 'react';
 class BasketCheckout extends React.Component {
     render () {
         return (
-            <div>
+            <div className="col-12">
                 <div className="row">
                     <div className="totalHeader mr-auto">
                         <h3>TOTAL</h3>

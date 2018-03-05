@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-var CategoryOverview = React.createClass({
-    render: function() {
+class CategoryOverview extends React.Component{
+    render () {
         return (
             <div className = "row categoryOverviewBlock">
                 <div className = "categoryOverviewText col-md-6 col-12">
@@ -15,6 +14,6 @@ var CategoryOverview = React.createClass({
             </div>
         )
     }
-});
+};
 
 export default CategoryOverview;

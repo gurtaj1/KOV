@@ -1,5 +1,3 @@
-import lodash from 'lodash';
-
 const initialState = [ {type: 'kits', priceRange: 'ALL', inuse: true},
                        {type: 'kits', priceRange: '£0-£20', inuse: false},
                        {type: 'kits', priceRange: '£20-£40', inuse: false},
@@ -22,13 +20,13 @@ const initialState = [ {type: 'kits', priceRange: 'ALL', inuse: true},
                             
 function changeFilter(stateFilters, filter) {
     let newFilters = stateFilters.slice(0); //makes copy of the part state which is accessible to this reducer ('stateFilters' - the filters array set in state-initialState)
-    let correctFilter = lodash.find(newFilters, newFilter => newFilter.priceRange === filter.priceRange && newFilter.type === filter.type); //finds filter which satisfies the function-invoked within the newFilters array : find(collection to inspect, the function invoked per iteration). note that we change the filter that matches priceRange AND (product) type so that we do not change the values of the filters which are displayed on other, product type, routes.
-    correctFilter.inuse = true; //changes it to opposite boolean of what it currently is
     for (var i=0; i<newFilters.length; i++) {
-        if (newFilters[i].priceRange !== filter.priceRange && newFilters[i].type === filter.type) {
+        if (newFilters[i].priceRange === filter.priceRange && newFilters[i].type === filter.type) {
+            newFilters[i].inuse = true
+        } else if (newFilters[i].type === filter.type) {
             newFilters[i].inuse = false;
         }
-    }; //this for loop changes all non-selected, (product-)type matching, filters' 'disabled' properties, to true (disables all other matching filters). note that we change the filters that matches (product) type ONLY so that we do not change the values of the filters which are displayed on other, product type, routes.
+    }
     return newFilters; //returns new altered state
     
 }
@@ -40,5 +38,4 @@ export default function(state = initialState, action) {
         default:
             return state;
     }
-    return state;
 };

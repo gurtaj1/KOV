@@ -1,17 +1,12 @@
 import KitsBannerSmoke from '../product_images/kits/kitsbannersmoke.jpg';
-import KitsBannerSmokePattern from '../product_images/kits/kitsbannersmokepattern.jpg';
 import KitsBannerPattern from '../product_images/kits/kitsbannerpattern.jpg';
 import TanksBannerSmoke from '../product_images/tanks/tanksbannersmoke.jpg';
-import TanksBannerSmokePattern from '../product_images/tanks/tanksbannersmokepattern.jpg';
 import TanksBannerPattern from '../product_images/tanks/tanksbannerpattern.jpg';
 import ELiquidsBannerSmoke from '../product_images/flavours/eliquidsbannersmoke.jpg';
-import ELiquidsBannerSmokePattern from '../product_images/flavours/eliquidsbannersmokepattern.jpg';
 import ELiquidsBannerPattern from '../product_images/flavours/eliquidsbannerpattern.jpg';
 import BatteriesBannerSmoke from '../product_images/batteries/batteriesbannersmoke.jpg';
-import BatteriesBannerSmokePattern from '../product_images/batteries/batteriesbannersmokepattern.jpg';
 import BatteriesBannerPattern from '../product_images/batteries/batteriesbannerpattern.jpg';
 import CoilsBannerSmoke from '../product_images/coils/coilsbannersmoke.jpg';
-import CoilsBannerSmokePattern from '../product_images/coils/coilsbannersmokepattern.jpg';
 import CoilsBannerPattern from '../product_images/coils/coilsbannerpattern.jpg';
 
 const initialState = [
@@ -141,5 +136,4 @@ export default function(state=initialState, action){
         default:
             return state;
     }
-        return state;
 };
