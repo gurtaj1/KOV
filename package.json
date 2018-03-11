@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gurtaj1.github.io/KOV/",
+  "homepage": "https://gurtaj1.github.io/KOV",
   "dependencies": {
     "bootstrap-less": "^3.3.8",
     "classnames": "^2.2.5",
