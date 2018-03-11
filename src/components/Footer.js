@@ -15,9 +15,13 @@ class Footer extends React.Component {
                             </div>
                             <div className="col-12 col-md-3 mx-auto">
                                 <div className="profile">
-                                    <h6>DEVELOPER PROFILE</h6>
-                                    <a href="http://www.linkedin.com/in/gurtaj-singh-kang-6883515b"><i className="fa fa-linkedin-square"></i></a>
-                                    <a href="https://github.com/gurtaj1"><i className="fa fa-github"></i></a>
+                                    <h6>DEVELOPER NETWORK</h6>
+                                    <div className="networkIcons">
+                                        <a href="mailto:gurtajkang@yahoo.co.uk"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                        <a href="https://github.com/gurtaj1"><i className="fa fa-github"></i></a>
+                                        <a href="http://www.linkedin.com/in/gurtaj-singh-kang-6883515b"><i className="fa fa-linkedin-square"></i></a>
+                                        <a href="https://stackoverflow.com/users/8383176/gurtaj"><i className="fa fa-stack-overflow fa-3x" aria-hidden="true"></i></a>
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-2 mx-auto">

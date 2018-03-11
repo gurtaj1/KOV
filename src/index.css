@@ -29,8 +29,8 @@ body {
 }
 
 
-.container {                               /*container used here to apply to text within ALL components that have class container*/
-    font-family: 'Righteous', cursive;
+* {                               /*container used here to apply to text within ALL components that have class container*/
+    font-family: 'Righteous', Arial;
 }
 
 /*-----------------------------------------NavComponentContainer----------------------------------------*/
@@ -529,9 +529,13 @@ button:active{
     color: white;
 }
 
+.networkIcons {
+    margin-left: 20px;
+}
+
 .footer i {
     font-size: 25px;
-    margin: 5px;
+    margin: 5px 5px 16px 5px;
 }
 
 .smallDisclaimer {
