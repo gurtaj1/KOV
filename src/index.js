@@ -14,7 +14,7 @@ import createHistory from 'history/createBrowserHistory';
 
 import reducers from './reducers/reducers';
 
-const history = createHistory({basename: '/KOV'});
+const history = createHistory({basename: process.env.PUBLIC_URL+'/KOV'});
 const routeHistoryMiddleware = routerMiddleware(history); //this will allow us to programmatically (manualy) chang the url, from anywhere in the app
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(routeHistoryMiddleware, thunk)));

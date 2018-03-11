@@ -10,7 +10,7 @@ class Footer extends React.Component {
                             <div className="col-12 col-md-3 mx-auto">
                                 <div className="bigDisclaimer">
                                     <h6>DISCLAIMER</h6>
-                                    This App is for demonstration and learning purposes only. All information on products displayed, should not be held as a true representation of the actual real-life products.
+                                    This App is for demonstration purposes only. All information on products displayed, should not be held as a true representation of the actual real-life products.
                                 </div>
                             </div>
                             <div className="col-12 col-md-3 mx-auto">
