@@ -38,9 +38,9 @@ class NavComponent extends React.Component{
 					<Link to="/basket" className="basketPage">Basket</Link>
 				</div>
 				<div className="navNarrow">
+					<Link to='/' className="homePage"><img src={Logo} alt="Company Logo" /></Link>
 					<i className="fa fa-bars" onClick={this.linksToggle}></i>
 					<div className="narrowLinks">
-						<Link to='/' className="homePage" onClick={this.linksToggle}><img src={Logo} alt="Company Logo" /></Link>
 						<input className="form-control mr-sm-2" id="narrowSearchBox" onKeyDown={(key) => this.searchEnterNarrow(key)} type="search" name="input" placeholder="Search Products" aria-label="Search"/> {/*'key' in the onKeyDown function represents the key press event (could have used any word)*/}
 						<Link to='/products/kits' className="kitsPage" onClick={this.linksToggle}>Kits</Link>
 						<Link to="/products/tanks" className="tanksPage" onClick={this.linksToggle}>Tanks</Link>

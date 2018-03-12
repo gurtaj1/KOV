@@ -9,6 +9,7 @@ import HomeBannerSmoke from '../product_images/home/homebannersmoke.jpg';
 import TanksCat from '../product_images/tanks/tankscat.jpg'
 import EliquidsCat from '../product_images/flavours/eliquidscat.jpg'
 import KitsCat from '../product_images/kits/kitscat.jpg';
+import ModsCat from '../product_images/modscat.jpg';
 
 class Home extends React.Component {
 	smallHomeIntroToggle () {
@@ -87,7 +88,7 @@ class Home extends React.Component {
                 </div>
 
                 <div className="row">
-                    <div id="myCarousel" className="carousel slide col-10 mx-auto" data-ride="carousel">
+                    <div id="myCarousel" className="carousel slide col-11 mx-auto" data-ride="carousel">
                         <ol className="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -121,21 +122,26 @@ class Home extends React.Component {
                     </div>
                 </div>
 
-                <div className="row categoryPics">
+                <div className="row">
                     <div className="col-12">
                         <div className="underlinerOutside" >
                             <div className="underlinerInside">
                             </div>
                         </div>
                     </div>
-                    <div className="col-8 col-md-4 mx-auto">
-                        <Link to="/products/tanks"><img className="d-block w-100" src={TanksCat} alt="cat pic 1" /></Link>
-                    </div>
-                    <div className="col-8 col-md-4 mx-auto">
+                </div>
+                <div className="row categoryPics">
+                    <div className="col-6">
                         <Link to="/products/eliquids"><img className="d-block w-100" src={EliquidsCat} alt="cat pic 2" /></Link>
                     </div>
-                    <div className="col-8 col-md-4 mx-auto">
+                    <div className="col-6">
                         <Link to="/products/kits"><img className="d-block w-100" src={KitsCat} alt="cat pic 3" /></Link>
+                    </div>
+                    <div className="col-6">
+                        <Link to="/products/tanks"><img className="d-block w-100" src={TanksCat} alt="cat pic 1" /></Link>
+                    </div>
+                    <div className="col-6">
+                        <Link to="/products/kits"><img className="d-block w-100" src={ModsCat} alt="cat pic 1" /></Link>
                     </div>
                 </div>
 

@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 html {                            /*this and below is required to keep the footer at the bottom of the page, if content doesn't fill view; and below all content if content exceeds view field.*/
   height: 100%;
   box-sizing: border-box;            /*incude content, padding, and border in width and height properties*/
@@ -29,7 +23,7 @@ body {
 }
 
 
-* {                               /*container used here to apply to text within ALL components that have class container*/
+* {                               /* * used here to apply to text within ALL components*/
     font-family: 'Righteous', Arial;
 }
 
@@ -81,10 +75,20 @@ nav {
 	margin-left: 12px;
 }
 
+.navNarrow img {
+	max-height: 30px;
+}
+
+.navNarrow .homePage {
+    float: left;
+}
+
 .navNarrow i {
 	color: #FFF;
-	float: left;
-	cursor: pointer;
+	float: right;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 4px;
 }
 
 .narrowLinks {
@@ -105,13 +109,8 @@ nav {
 	text-decoration: none;
 }
 
-
-.narrowLinks img {
-	max-height: 30px;
-}
-
 .narrowLinks #narrowSearchBox {
-
+    margin-top: 15px;
 	float: left;
 	clear: left;
 }
@@ -214,6 +213,11 @@ nav {
     border-radius: 5px;
 }
 
+.categoryPics {
+    margin-bottom: -15px;
+    padding: 0px 10px;
+}
+
 .categoryPics img {
     border-radius: 5px;
     margin-top: 5px;
@@ -226,10 +230,6 @@ nav {
         }
         .homeHeadBig {
             display: block;
-        }
-        .categoryPics img {
-            margin-top: 0px;
-            margin-bottom: 0px;
         }
 }
 
@@ -349,7 +349,7 @@ nav {
 
 .pagination {
     display: inline-block;
-    margin: auto;
+    margin: 10px auto -20px auto;
 }
 
 /*-----------------------------------------ProductPageContainer----------------------------------------*/
@@ -400,7 +400,7 @@ nav {
     border-radius: 5px;
     max-width: 100%;
     max-height: 100%;
-    margin: 35px 0px;
+    margin: 15px 0px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -529,25 +529,26 @@ button:active{
     color: white;
 }
 
-.networkIcons {
-    margin-left: 20px;
-}
-
 .footer i {
     font-size: 25px;
     margin: 5px 5px 14px 5px;
 }
 
+.bigDisclaimer {
+    margin-bottom: 10px;
+}
+
+.bigDisclaimer p {
+    text-align: left;
+}
+
+.address {
+    margin-bottom: 10px;
+}
+
 .smallDisclaimer {
     font-size: 9px;
 }
-
-    .bigDisclaimer {
-      margin-bottom: 10px;
-    }
-    .address {
-      margin-bottom: 10px;
-    }
 
 @media only screen and (min-width: 768px) { /*no longer need to keep these divs spaced in larger screen since they are now side by side, not on top of one another*/
     .bigDisclaimer {
