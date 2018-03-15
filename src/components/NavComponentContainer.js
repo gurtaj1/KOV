@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {bindActionCreators} from 'redux';
+import $ from 'jquery'; 
 
 import Logo from '../product_images/logo.png';
 
@@ -55,11 +56,13 @@ class NavComponent extends React.Component{
 		);
 	}
 	linksToggle() {
-			var linksEl = document.querySelector('.narrowLinks');
-			if (linksEl.style.display === 'block') {
-				linksEl.style.display = 'none';
+			if ($(".narrowLinks").css("display") === "block") {
+				$(".narrowLinks").css({"border-top": "none"});
+				$(".narrowLinks").slideUp();
 			} else {
-				linksEl.style.display = 'block';
+				$(".narrowLinks").slideDown(function(){
+					$(".narrowLinks").css({"border-top": "1px solid #009900"});
+				});
 			}
 	}
 }

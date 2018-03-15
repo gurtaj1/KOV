@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery'; 
 
 import Filter from './Filter';
 
@@ -37,14 +38,14 @@ class FiltersLists extends React.Component {
             var filterDivExtension = document.querySelector('.filterDivExtension');
             var chevronUp = document.querySelector('#chevronUp');
             var chevronDown = document.querySelector('#chevronDown');
-			if (filterDivExtension.style.display === 'block') {
-                filterDivExtension.style.display = 'none';
-                chevronUp.style.display = 'none';
-                chevronDown.style.display = 'block';
+			if ($('.filterDivExtension').css("display") === 'block') {
+                $('.filterDivExtension').slideUp();
+                $('#chevronUp').css({"display": "none"});
+                $('#chevronDown').css({"display": "block"});
 			} else {
-                filterDivExtension.style.display = 'block';
-                chevronUp.style.display = 'block';
-                chevronDown.style.display = 'none';
+                $('.filterDivExtension').slideDown();
+                $('#chevronDown').css({"display": "none"});
+                $('#chevronUp').css({"display": "block"});
 			}
     }
     render () {

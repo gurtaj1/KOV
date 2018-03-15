@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import $ from 'jquery'; 
 
 import KitsBannerPattern from '../product_images/kits/kitsbannerpattern.jpg';
 import TanksBannerPattern from '../product_images/tanks/tanksbannerpattern.jpg';
@@ -16,14 +17,14 @@ class Home extends React.Component {
             var smallHomeIntro = document.querySelector('.smallHomeIntro');
             var pullDownTop = document.querySelector('.pullDownTop');
             var pullUpTop = document.querySelector('.pullUpTop');
-			if (smallHomeIntro.style.display === 'block') {
-                smallHomeIntro.style.display = 'none';
-                pullUpTop.style.display = 'none';
-                pullDownTop.style.display = 'block';
+			if ($('.smallHomeIntro').css("display") === 'block') {
+                $('.smallHomeIntro').slideUp();
+                $('.pullUpTop').css({"display": "none"});
+                $('.pullDownTop').css({"display": "block"});
 			} else {
-                smallHomeIntro.style.display = 'block';
-                pullUpTop.style.display = 'block';
-                pullDownTop.style.display = 'none';
+                $('.smallHomeIntro').slideDown();
+                $('.pullUpTop').css({"display": "block"});
+                $('.pullDownTop').css({"display": "none"});
 			}
     }
     render() {
