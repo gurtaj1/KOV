@@ -7,8 +7,8 @@ import TanksBannerPattern from '../product_images/tanks/tanksbannerpattern.jpg';
 import ELiquidsBannerSmoke from '../product_images/flavours/eliquidsbannersmoke.jpg';
 import HomeBannerSmoke from '../product_images/home/homebannersmoke.jpg';
 
-import TanksCat from '../product_images/tanks/tankscat.jpg'
-import EliquidsCat from '../product_images/flavours/eliquidscat.jpg'
+import TanksCat from '../product_images/tanks/tankscat.jpg';
+import EliquidsCat from '../product_images/flavours/eliquidscat.jpg';
 import KitsCat from '../product_images/kits/kitscat.jpg';
 import ModsCat from '../product_images/modscat.jpg';
 
